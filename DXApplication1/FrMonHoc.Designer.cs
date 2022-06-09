@@ -44,7 +44,6 @@ namespace DXApplication1
             this.btnCapNhat = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.BtnLuu = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.BtnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -67,6 +66,7 @@ namespace DXApplication1
             this.virtualServerModeSource1 = new DevExpress.Data.VirtualServerModeSource(this.components);
             this.lOPTINCHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTINCHITableAdapter = new DXApplication1.QLDSV_TCDataSet3TableAdapters.LOPTINCHITableAdapter();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             sOTIET_LTLabel = new System.Windows.Forms.Label();
@@ -145,7 +145,6 @@ namespace DXApplication1
             this.btnCapNhat,
             this.BtnThoat,
             this.BtnLuu,
-            this.btnGhi,
             this.btnHuy});
             this.barManager1.MaxItemId = 8;
             this.barManager1.StatusBar = this.bar3;
@@ -163,7 +162,6 @@ namespace DXApplication1
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCapNhat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy),
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnLuu),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGhi),
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnThoat)});
             this.bar1.Text = "Tools";
             // 
@@ -225,16 +223,6 @@ namespace DXApplication1
             this.BtnLuu.Name = "BtnLuu";
             this.BtnLuu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.BtnLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLuu_ItemClick);
-            // 
-            // btnGhi
-            // 
-            this.btnGhi.Caption = "Ghi";
-            this.btnGhi.Id = 6;
-            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
-            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // BtnThoat
             // 
@@ -325,6 +313,7 @@ namespace DXApplication1
             // 
             this.gridView1.GridControl = this.mONHOCGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
             // mONHOCTableAdapter
             // 
@@ -365,7 +354,7 @@ namespace DXApplication1
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(176, 56);
+            this.labelControl1.Location = new System.Drawing.Point(186, 54);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(188, 24);
             this.labelControl1.TabIndex = 8;
@@ -430,11 +419,24 @@ namespace DXApplication1
             // 
             this.lOPTINCHITableAdapter.ClearBeforeFill = true;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(279, 32);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(169, 24);
+            this.labelControl2.TabIndex = 9;
+            this.labelControl2.Text = "Quản Lý Môn Học";
+            // 
             // FrMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 739);
+            this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -499,7 +501,7 @@ namespace DXApplication1
         private DevExpress.Data.VirtualServerModeSource virtualServerModeSource1;
         private System.Windows.Forms.BindingSource lOPTINCHIBindingSource;
         private QLDSV_TCDataSet3TableAdapters.LOPTINCHITableAdapter lOPTINCHITableAdapter;
-        private DevExpress.XtraBars.BarButtonItem btnGhi;
         private DevExpress.XtraBars.BarButtonItem btnHuy;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }

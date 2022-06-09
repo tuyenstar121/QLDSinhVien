@@ -118,6 +118,7 @@ namespace DXApplication1
             }
         }
 
+
         private void label4_MouseMove(object sender, MouseEventArgs e)
         {
             if (PGV.Checked)
@@ -158,7 +159,8 @@ namespace DXApplication1
                 Program.myReader.Close();
             }
         }
-        private void btnXacNhan_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
             string cmd = "EXEC dbo.Xoa_Login '" + txtLogin.Text + "'";
@@ -179,5 +181,48 @@ namespace DXApplication1
             }
         }
 
+       
+
+        //private void cbMaNV_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (PGV.Checked)
+        //    {
+        //        string maNV = cbMaNV.Text;
+        //        string cmd = "SELECT SUSER_SNAME(sid) FROM SYS.sysusers, GIANGVIEN WHERE NAME=MAGV AND NAME='" + maNV + "'";
+
+        //        Program.myReader = Program.ExecSqlDataReader(cmd);
+        //        if (Program.myReader == null) return;
+        //        Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break
+        //        txtLogin.Text = Program.myReader.GetString(0);
+
+        //        Program.myReader.Close();
+
+        //    }
+        //    else if (rdSV.Checked)
+        //    {
+        //        string maNV = cbMaNV.Text;
+        //        string cmd = "SELECT SUSER_SNAME(sid) FROM SYS.sysusers, SINHVIEN WHERE NAME=MASV AND NAME='" + maNV + "'";
+
+        //        Program.myReader = Program.ExecSqlDataReader(cmd);
+        //        if (Program.myReader == null) return;
+        //        Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break
+        //        txtLogin.Text = Program.myReader.GetString(0);
+
+        //        Program.myReader.Close();
+        //    }
+        //    else if (rdKHOA.Checked)
+        //    {
+        //        string maNV = cbMaNV.Text;
+        //        string cmd = "SELECT SUSER_SNAME(sid) FROM SYS.sysusers, GIANGVIEN WHERE NAME=MAGV AND NAME='" + maNV + "'";
+
+        //        Program.myReader = Program.ExecSqlDataReader(cmd);
+        //        if (Program.myReader == null) return;
+        //        Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break
+        //        txtLogin.Text = Program.myReader.GetString(0);
+
+        //        Program.myReader.Close();
+        //    }
+        //}
     }
+    
 }

@@ -11,7 +11,8 @@ using System.Windows.Forms;
 namespace DXApplication1
 {
     public partial class frLTC : Form
-    {   int chucnang=0;
+    {
+        int chucnang = 0;
         private BindingSource bdsSinhVien = new BindingSource();
         private BindingSource bdsLopTinchi = new BindingSource();
         private BindingSource bdsDSLTC_HUY = new BindingSource();
@@ -34,7 +35,7 @@ namespace DXApplication1
         void loadloptcc()
         {
 
-            string cmd = "SELECT*FROM LOPTINCHI WHERE MAKHOA='"+MaKhoa.Text +"'";
+            string cmd = "SELECT*FROM LOPTINCHI WHERE MAKHOA='" + MaKhoa.Text + "'";
             DataTable tableLopTC = Program.ExecSqlDataTable(cmd);
             this.bdsLopTinchi.DataSource = tableLopTC;
             this.lOPTINCHIGridControl.DataSource = this.bdsLopTinchi;
@@ -81,23 +82,23 @@ namespace DXApplication1
 
         private void lOPTINCHIGridControl_MouseClick(object sender, MouseEventArgs e)
         {
-          
+
             if (bdsLopTinchi.Count > 0)
             {
-               mALTCSpinEdit.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MALTC"].ToString();
+                mALTCSpinEdit.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MALTC"].ToString();
                 cbMaGV.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MAGV"].ToString();
-               cbKhoa.Text  = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MAKHOA"].ToString();
-               nIENKHOATextEdit.Text= ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["NIENKHOA"].ToString();
-                nHOMSpinEdit.Text= ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["NHOM"].ToString();
-                cbMaMH.Text  = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MAMH"].ToString();
+                cbKhoa.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MAKHOA"].ToString();
+                nIENKHOATextEdit.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["NIENKHOA"].ToString();
+                nHOMSpinEdit.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["NHOM"].ToString();
+                cbMaMH.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MAMH"].ToString();
                 hOCKYSpinEdit.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["HOCKY"].ToString();
-              sOSVTOITHIEUSpinEdit.Text  = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["SOSVTOITHIEU"].ToString();
-              //HU  = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MALTC"].ToString();
+                sOSVTOITHIEUSpinEdit.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["SOSVTOITHIEU"].ToString();
+                //HU  = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MALTC"].ToString();
             }
         }
         private bool checknhaplieu()
         {
-        
+
 
             if (hOCKYSpinEdit.Value == 0)
             {
@@ -159,28 +160,47 @@ namespace DXApplication1
             sOSVTOITHIEUSpinEdit.Text = "";
             cbKhoa.Text = MaKhoa.Text;
             cbKhoa.Enabled = false;
-                 
+
 
 
         }
 
         private void btnluu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (chucnang==1)
+            if (checknhaplieu() == true)
             {
-                string sql = "INSERT INTO LOPTINCHI(NIENKHOA,HOCKY,MAMH,NHOM,MAGV,MAKHOA,SOSVTOITHIEU,HUYLOP) VALUES('" + nIENKHOATextEdit.Text.Trim() + "'," + hOCKYSpinEdit.Text.Trim() + ",'" + cbMaMH.Text.Trim() + "',"
-                  + nHOMSpinEdit .Text + ",'" + cbMaGV.Text.Trim() + "','" + MaKhoa.Text.Trim() + "'," + sOSVTOITHIEUSpinEdit.Text + ",'"+hUYLOPCheckEdit.Checked+"') ";
-                MessageBox.Show(sql);
-                if (Program.ExecSqlNonQuery(sql) == 0)
+                if (chucnang == 1)
                 {
-                    MessageBox.Show("Thêm Thành Công");
-                    btnThem.Enabled = btnsua.Enabled = btnXoa.Enabled = MaKhoa.Enabled  = false;
-                    panelControl3.Enabled = true;
-                    chucnang = 0;
+                    string sql = "INSERT INTO LOPTINCHI(NIENKHOA,HOCKY,MAMH,NHOM,MAGV,MAKHOA,SOSVTOITHIEU,HUYLOP) VALUES('" + nIENKHOATextEdit.Text.Trim() + "'," + hOCKYSpinEdit.Text.Trim() + ",'" + cbMaMH.Text.Trim() + "',"
+                      + nHOMSpinEdit.Text + ",'" + cbMaGV.Text.Trim() + "','" + MaKhoa.Text.Trim() + "'," + sOSVTOITHIEUSpinEdit.Text + ",'" + hUYLOPCheckEdit.Checked + "') ";
+
+                    if (Program.ExecSqlNonQuery(sql) == 0)
+                    {
+                        MessageBox.Show("Thêm Thành Công");
+                        btnThem.Enabled = btnsua.Enabled = btnXoa.Enabled = MaKhoa.Enabled = mALTCSpinEdit.Enabled = true;
+                        panelControl3.Enabled = false;
+                        chucnang = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm Thất bại! Vui lòng Xem lại Mã Sinh Viên");
+                    }
                 }
-                else
+                if (chucnang == 2)
                 {
-                    MessageBox.Show("Thêm Thất bại! Vui lòng Xem lại Mã Sinh Viên");
+                    string sql = "EXEC UPDATELOPTC " + mALTCSpinEdit.Text + ",'" + nIENKHOATextEdit.Text + "'," + hOCKYSpinEdit.Text + ",'" + cbKhoa.Text.Trim() + "','" + cbMaMH.Text.Trim() + "','" + cbMaGV.Text.Trim() + "'," + sOSVTOITHIEUSpinEdit.Text + "," + nHOMSpinEdit.Text + "";
+                    MessageBox.Show(sql);
+                    if (Program.ExecSqlNonQuery(sql) == 0)
+                    {
+                        MessageBox.Show("UPDATE Thành Công");
+                        btnThem.Enabled = btnsua.Enabled = btnXoa.Enabled = MaKhoa.Enabled = mALTCSpinEdit.Enabled = true;
+                        panelControl3.Enabled = false;
+                        chucnang = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("UPDATE Thất Thất bại!");
+                    }
                 }
             }
         }
@@ -222,6 +242,30 @@ namespace DXApplication1
         private void barButtonItem2_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             loadloptcc();
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            if (mALTCSpinEdit.Value != 0)
+            {
+                string sql = "DELETE LOPTINCHI WHERE MALTC='" + mALTCSpinEdit.Text + "'";
+              
+                if (Program.ExecSqlNonQuery(sql) == 0)
+                {
+                    MessageBox.Show("Xóa Thành Công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Thất Bại");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Chọn Lớp Bạn Muốn Thay Đổi Thông Tin");
+            }
+
         }
     }
 }

@@ -142,6 +142,11 @@ namespace DXApplication1
         {
 
         }
+
+        private void labelControl5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

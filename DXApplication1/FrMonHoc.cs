@@ -162,9 +162,30 @@ namespace DXApplication1
 
         private void BtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Validate();
-            this.mONHOCBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLDSV_TCDataSet3);
+            if (validatorMonHoc() == true)
+            {
+                try
+                {
+                    mONHOCBindingSource.EndEdit();
+                    mONHOCBindingSource.ResetCurrentItem();
+                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.mONHOCTableAdapter.Update(this.qLDSV_TCDataSet3.MONHOC);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ghi lớp học: " + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
+                mONHOCGridControl.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
+           
+                panelControl2.Enabled = false;
+            }
+            else
+            {
+                return;
+
+            }
         }
 
         private void BtnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -189,11 +210,7 @@ namespace DXApplication1
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string mamh = "";
-            if (lOPTINCHIBindingSource.Count > 0)
-            {
-                MessageBox.Show("Không thể xóa môn học này vì đã có trong lớp học", "", MessageBoxButtons.OK);
-                return;
-            }
+           
             if (MessageBox.Show("Bạn có thật sự muốn xóa môn học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
@@ -207,7 +224,7 @@ namespace DXApplication1
                 {
                     MessageBox.Show("Lỗi xóa môn học: " + ex.Message, "", MessageBoxButtons.OK);
                     this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet3.MONHOC);
-                    mONHOCBindingSource.Position = mONHOCBindingSource.Find("MALOP", mamh);
+   
                     return;
                 }
             }
@@ -216,17 +233,19 @@ namespace DXApplication1
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (MessageBox.Show("Bạn có thật sự muốn sữa lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                vitri = mONHOCBindingSource.Position;
+                flagOption = "UPDATE";
 
-            vitri = mONHOCBindingSource.Position;
-            flagOption = "UPDATE";
+                oldMaMonHoc = txbMaMonHoc.Text.Trim();
+                oldTenMonHoc = txbTenMonHoc.Text.Trim();
+                txbMaMonHoc.Enabled = false;
+                panelControl2.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
 
-            oldMaMonHoc = txbMaMonHoc.Text.Trim();
-            oldTenMonHoc = txbTenMonHoc.Text.Trim();
-            txbMaMonHoc.Enabled = false;
-            panelControl2.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
-
-            mONHOCGridControl.Enabled = false;
+                mONHOCGridControl.Enabled = false;
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -248,7 +267,7 @@ namespace DXApplication1
                 }
                 mONHOCGridControl.Enabled = true;
                 btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
-                btnGhi.Enabled = false;
+             
                 panelControl2.Enabled = false;
             }
             else
@@ -262,7 +281,7 @@ namespace DXApplication1
         {
             panelControl2.Enabled = false;
             mONHOCGridControl.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnGhi.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =txbMaMonHoc.Enabled = true;
         }
     
     }

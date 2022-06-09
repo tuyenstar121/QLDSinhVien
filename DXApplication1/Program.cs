@@ -55,7 +55,7 @@ namespace DXApplication1
                 return 1;
             } catch(Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại username và password."+e);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại username và password.");
                 return 0;
             }
         }

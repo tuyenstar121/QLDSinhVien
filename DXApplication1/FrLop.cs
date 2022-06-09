@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -51,13 +52,16 @@ namespace DXApplication1
 
 
         }
-
+        
         private void FrLop_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLDSV_TCDataSet3.SP_LAYTTLOP' table. You can move, or remove it, as needed.
+            if (Program.mGroup.Equals("Khoa"))
+            {
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnSua.Enabled = btnCapNhat.Enabled=btnLuu.Enabled =btnThoat.Enabled= false;
+            }
 
-
-            loadKhoacomobox();
+                loadKhoacomobox();
             MaKhoa.SelectedIndex = 0;
             try
             {
@@ -80,7 +84,7 @@ namespace DXApplication1
             {
                 if (chucnang == 1)
                 {
-                    string sql = "INSERT INTO LOP VALUES('" + txtMalop.Text + "',N'" + txtLop.Text + "',N'" + txtKhoahoc.Text + "','" + cbbMaKhoa.Text + "') ";
+                    string sql = "INSERT INTO LOP VALUES('" + txtMalop.Text.Trim().ToUpper() + "',N'" + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtLop.Text.ToLower()) + "',N'" + txtKhoahoc.Text + "','" + cbbMaKhoa.Text + "') ";
                     if (Program.ExecSqlNonQuery(sql) == 0)
                     {
                         MessageBox.Show("Thêm Thành Công");
@@ -95,7 +99,7 @@ namespace DXApplication1
                 }
                 if (chucnang == 2)
                 {
-                    string sql = "EXEC UDATELOP'" + txtMalop.Text + "',N'" + txtLop.Text + "',N'" + txtKhoahoc.Text + "','" + cbbMaKhoa.Text + "' ";
+                    string sql = "EXEC UDATELOP'" + txtMalop.Text.Trim().ToUpper() + "',N'" + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtLop.Text.ToLower()) + "',N'" + txtKhoahoc.Text + "','" + cbbMaKhoa.Text + "' ";
                     if (Program.ExecSqlNonQuery(sql) == 0)
                     {
                         MessageBox.Show("Thêm Thành Công");
@@ -235,16 +239,23 @@ namespace DXApplication1
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn có thật sự muốn xóa lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (txtMalop.Text == "")
             {
-                string sql = "DELETE FROM LOP WHERE MALOP='" + txtMalop.Text + "'";
-                if (Program.ExecSqlNonQuery(sql) == 0)
+                MessageBox.Show("vui lòng chọn lớp trước khi xóa");
+            }
+            else
+            {
+                if (MessageBox.Show("Bạn có thật sự muốn xóa lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    MessageBox.Show(" Xóa Thành Công");
-                }
-                else
-                {
-                    MessageBox.Show("Lớp Đã Tồn Tại ở Bảng Khác");
+                    string sql = "DELETE FROM LOP WHERE MALOP='" + txtMalop.Text + "'";
+                    if (Program.ExecSqlNonQuery(sql) == 0)
+                    {
+                        MessageBox.Show(" Xóa Thành Công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lớp Đã Tồn Tại ở Bảng Khác");
+                    }
                 }
             }
         }
@@ -311,6 +322,8 @@ namespace DXApplication1
             this.Close();
 
         }
+
+    
     }
  }
 

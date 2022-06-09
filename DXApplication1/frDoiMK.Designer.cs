@@ -126,9 +126,9 @@ namespace DXApplication1
             this.label1.Location = new System.Drawing.Point(422, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 35);
+            this.label1.Size = new System.Drawing.Size(198, 35);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Đổi TÀI KHOẢN";
+            this.label1.Text = "Đổi Mật Khẩu";
             // 
             // sinhvienTableAdapter1
             // 
@@ -191,7 +191,7 @@ namespace DXApplication1
             this.Controls.Add(this.x);
             this.Name = "frDoiMK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frDoiMK";
+            this.Text = "Đổi Mật Khẩu ";
             this.Load += new System.EventHandler(this.frDoiMK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtXacNhanMKMoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMKMoi.Properties)).EndInit();

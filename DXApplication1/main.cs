@@ -59,6 +59,7 @@ namespace DXApplication1
                 btnDK.Enabled = false;
                 BtnXemdiem.Enabled = true;
                 btnDK.Enabled = true;
+                btnDoiMK.Enabled = true;
 
 
             }
@@ -67,13 +68,14 @@ namespace DXApplication1
                 btnDangNhap.Enabled = false;
                 btnDangxuat.Enabled = true;
                 btnNhapDiem.Enabled = btnSV.Enabled = btnLop.Enabled = true;
+                btnDoiMK.Enabled = true;
             }
             if (Program.mGroup.Equals("PGV"))
             {
                 btnDangNhap.Enabled = false;
                 btnDangxuat.Enabled = true;
                 btnBackup.Enabled = btnLop.Enabled = btnLopTC.Enabled = btnThemTK.Enabled = btnXoaTK.Enabled = btnLopTC.Enabled = btnMH.Enabled = btnSV.Enabled = true;
-
+                btnDoiMK.Enabled = true;
             }
         }
 

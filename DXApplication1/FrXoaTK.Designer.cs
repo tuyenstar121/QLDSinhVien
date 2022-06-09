@@ -38,43 +38,49 @@ namespace DXApplication1
             this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.txtLogin = new DevExpress.XtraEditors.TextEdit();
             this.rdKHOA = new System.Windows.Forms.RadioButton();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.button1 = new System.Windows.Forms.Button();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rdSV
             // 
             this.rdSV.AutoSize = true;
-            this.rdSV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.rdSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(94)))), ((int)(((byte)(92)))));
+            this.rdSV.Checked = true;
+            this.rdSV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.rdSV.Location = new System.Drawing.Point(347, 95);
             this.rdSV.Name = "rdSV";
             this.rdSV.Size = new System.Drawing.Size(89, 21);
             this.rdSV.TabIndex = 1;
             this.rdSV.TabStop = true;
             this.rdSV.Text = "Sinh Viên";
-            this.rdSV.UseVisualStyleBackColor = true;
+            this.rdSV.UseVisualStyleBackColor = false;
             this.rdSV.CheckedChanged += new System.EventHandler(this.rdSV_Click);
             // 
             // PGV
             // 
             this.PGV.AutoSize = true;
-            this.PGV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(94)))), ((int)(((byte)(92)))));
+            this.PGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.PGV.Location = new System.Drawing.Point(475, 95);
             this.PGV.Name = "PGV";
             this.PGV.Size = new System.Drawing.Size(144, 21);
             this.PGV.TabIndex = 2;
             this.PGV.TabStop = true;
             this.PGV.Text = "Phòng Giảng Viên";
-            this.PGV.UseVisualStyleBackColor = true;
+            this.PGV.UseVisualStyleBackColor = false;
             this.PGV.CheckedChanged += new System.EventHandler(this.PGV_Click);
             // 
             // labelControl1
             // 
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(94)))), ((int)(((byte)(92)))));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(100, 95);
@@ -85,8 +91,10 @@ namespace DXApplication1
             // 
             // labelControl2
             // 
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(94)))), ((int)(((byte)(92)))));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelControl2.Appearance.Options.UseBackColor = true;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
             this.labelControl2.Location = new System.Drawing.Point(100, 169);
@@ -108,8 +116,10 @@ namespace DXApplication1
             // 
             // labelControl4
             // 
+            this.labelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(94)))), ((int)(((byte)(92)))));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl4.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelControl4.Appearance.Options.UseBackColor = true;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
             this.labelControl4.Location = new System.Drawing.Point(91, 244);
@@ -126,10 +136,10 @@ namespace DXApplication1
             this.cbMaNV.Size = new System.Drawing.Size(281, 24);
             this.cbMaNV.TabIndex = 7;
             this.cbMaNV.SelectionChangeCommitted += new System.EventHandler(this.cbMaNV_SelectionChangeCommitted);
-            this.cbMaNV.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label4_MouseMove);
             // 
             // txtLogin
             // 
+            this.txtLogin.Enabled = false;
             this.txtLogin.Location = new System.Drawing.Point(261, 235);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(281, 22);
@@ -138,29 +148,16 @@ namespace DXApplication1
             // rdKHOA
             // 
             this.rdKHOA.AutoSize = true;
-            this.rdKHOA.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.rdKHOA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(94)))), ((int)(((byte)(92)))));
+            this.rdKHOA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.rdKHOA.Location = new System.Drawing.Point(248, 95);
             this.rdKHOA.Name = "rdKHOA";
             this.rdKHOA.Size = new System.Drawing.Size(62, 21);
             this.rdKHOA.TabIndex = 0;
             this.rdKHOA.TabStop = true;
             this.rdKHOA.Text = "Khoa";
-            this.rdKHOA.UseVisualStyleBackColor = true;
+            this.rdKHOA.UseVisualStyleBackColor = false;
             this.rdKHOA.CheckedChanged += new System.EventHandler(this.rdKHOA_Click);
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Gray;
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.labelControl5.Appearance.Options.UseBackColor = true;
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(301, 28);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(173, 29);
-            this.labelControl5.TabIndex = 9;
-            this.labelControl5.Text = "Xóa Tài Khoản";
             // 
             // button1
             // 
@@ -173,14 +170,29 @@ namespace DXApplication1
             this.button1.TabIndex = 10;
             this.button1.Text = "Xác Nhận";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(888, 497);
             this.panelControl1.TabIndex = 11;
+            this.panelControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label4_MouseMove);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(331, 21);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(155, 26);
+            this.labelControl6.TabIndex = 12;
+            this.labelControl6.Text = "Xóa Tài Khoản";
             // 
             // FrXoaTK
             // 
@@ -188,7 +200,6 @@ namespace DXApplication1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 497);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.cbMaNV);
             this.Controls.Add(this.labelControl4);
@@ -201,9 +212,11 @@ namespace DXApplication1
             this.Controls.Add(this.panelControl1);
             this.Name = "FrXoaTK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrXoaTK";
+            this.Text = "Xóa Tài Khoản";
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,8 +232,8 @@ namespace DXApplication1
         private System.Windows.Forms.ComboBox cbMaNV;
         private DevExpress.XtraEditors.TextEdit txtLogin;
         private System.Windows.Forms.RadioButton rdKHOA;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.Button button1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

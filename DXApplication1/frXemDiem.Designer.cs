@@ -110,9 +110,9 @@ namespace DXApplication1
             // 
             // btnTim
             // 
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnTim.ForeColor = System.Drawing.Color.Black;
             this.btnTim.Location = new System.Drawing.Point(920, 67);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(99, 31);
@@ -236,9 +236,11 @@ namespace DXApplication1
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.xemdiem);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frXemDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frXemDiem";
+            this.Text = "Xem Điểm";
             this.Load += new System.EventHandler(this.frXemDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

@@ -45,7 +45,7 @@ namespace DXApplication1
         void loadLopcombobox()
         {
             DataTable dt = new DataTable();
-            string cmd = "EXEC dbo.SP_LAYMALOP '" + MaKhoa.Text + "'";
+            string cmd = "SELECT MALOP FROM LOP WHERE MAKHOA= '" + MaKhoa.Text + "'";
             dt = Program.ExecSqlDataTable(cmd);
 
             BindingSource bdsgv = new BindingSource();
@@ -64,7 +64,7 @@ namespace DXApplication1
         private void loadSV()
         {
             DataTable svTable = new DataTable();
-            string cmd = "EXEC dbo.SP_LAYSVTHEOLOP '" + cbMalop.Text + "'";
+            string cmd = "SELECT *FROM SINHVIEN WHERE MALOP= '" + cbMalop.Text + "'";
             svTable = Program.ExecSqlDataTable(cmd);
             this.bds.DataSource = svTable;
             this.dataGridView1.DataSource = this.bds;
@@ -77,9 +77,11 @@ namespace DXApplication1
         //}
         private void frmSV_Load(object sender, EventArgs e)
         {
-            if (Program.mGroup.Equals("PGV") == false)
-                MaKhoa.Enabled = false;
-            
+            //if (Program.mGroup.Equals("PGV") == false)
+            //    MaKhoa.Enabled = false;
+            if (Program.mGroup.Equals("khoa")){
+                btnThem.Enabled = btnxoa.Enabled = btnsua.Enabled= btncapnhat.Enabled = btnluu.Enabled = btnthoat.Enabled = false; 
+            }
             loadKhoacomobox();
          
             loadLopcombobox();
@@ -369,7 +371,7 @@ namespace DXApplication1
             panelControl3.Enabled = true;
 
             DataTable dt = new DataTable();
-            string cmd = "EXEC dbo.SP_LAYMALOP '" + MaKhoa.Text + "'";
+            string cmd = "SELECT MALOP FROM LOP WHERE MAKHOA='" + MaKhoa.Text.Trim() + "'";
             dt = Program.ExecSqlDataTable(cmd);
 
             BindingSource bdsgv = new BindingSource();
@@ -390,6 +392,12 @@ namespace DXApplication1
             Ngaysinh.Text = "";
             dIACHITextEdit.Text = "";
             chucnang = 0;
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

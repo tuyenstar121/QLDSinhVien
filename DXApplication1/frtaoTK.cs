@@ -101,7 +101,7 @@ namespace DXApplication1
             if (rdSV.Checked) role = "SinhVien";
             if (PGV.Checked) role = "PGV";
 
-            String subLenh = " EXEC    @return_value = [dbo].[sp_TaoTaiKhoan] " +
+            String subLenh = " EXEC    @return_value = [dbo].[SP_TAOLOGIN] " +
 
                            " @LGNAME = N'" + login + "', " +
                            " @PASS = N'" + matkhau + "', " +
@@ -159,6 +159,14 @@ namespace DXApplication1
             return;
         }
 
-      
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

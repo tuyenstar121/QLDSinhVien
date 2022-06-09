@@ -43,6 +43,8 @@ namespace DXApplication1
                         if (Program.ExecSqlNonQuery(cmd) == 0)
                         {
                             MessageBox.Show("Đổi mật khẩu thành công", "Thông báo");
+                            
+
                             this.Close();
                         }
                         else

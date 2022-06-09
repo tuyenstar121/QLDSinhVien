@@ -55,6 +55,10 @@ namespace DXApplication1
             this.sP_LAYTTLOPTheoKhoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSV_TCDataSet3 = new DXApplication1.QLDSV_TCDataSet3();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableAdapterManager = new DXApplication1.QLDSV_TCDataSet3TableAdapters.TableAdapterManager();
             this.sINHVIENTableAdapter = new DXApplication1.QLDSV_TCDataSet3TableAdapters.SINHVIENTableAdapter();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -71,6 +75,7 @@ namespace DXApplication1
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.sP_LAYTTLOPTheoKhoaTableAdapter = new DXApplication1.QLDSV_TCDataSet3TableAdapters.SP_LAYTTLOPTheoKhoaTableAdapter();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             mALOPLabel1 = new System.Windows.Forms.Label();
             tENLOPLabel1 = new System.Windows.Forms.Label();
             kHOAHOCLabel1 = new System.Windows.Forms.Label();
@@ -286,9 +291,9 @@ namespace DXApplication1
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.sP_LAYTTLOPTheoKhoaGridControl);
-            this.panelControl1.Location = new System.Drawing.Point(75, 121);
+            this.panelControl1.Location = new System.Drawing.Point(75, 132);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(931, 574);
+            this.panelControl1.Size = new System.Drawing.Size(931, 532);
             this.panelControl1.TabIndex = 4;
             // 
             // sP_LAYTTLOPTheoKhoaGridControl
@@ -299,7 +304,7 @@ namespace DXApplication1
             this.sP_LAYTTLOPTheoKhoaGridControl.MainView = this.gridView1;
             this.sP_LAYTTLOPTheoKhoaGridControl.MenuManager = this.barManager1;
             this.sP_LAYTTLOPTheoKhoaGridControl.Name = "sP_LAYTTLOPTheoKhoaGridControl";
-            this.sP_LAYTTLOPTheoKhoaGridControl.Size = new System.Drawing.Size(927, 570);
+            this.sP_LAYTTLOPTheoKhoaGridControl.Size = new System.Drawing.Size(927, 528);
             this.sP_LAYTTLOPTheoKhoaGridControl.TabIndex = 0;
             this.sP_LAYTTLOPTheoKhoaGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -317,8 +322,54 @@ namespace DXApplication1
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMALOP,
+            this.colTENLOP,
+            this.colKHOAHOC,
+            this.colMAKHOA});
             this.gridView1.GridControl = this.sP_LAYTTLOPTheoKhoaGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMALOP, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.MinWidth = 25;
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 0;
+            this.colMALOP.Width = 94;
+            // 
+            // colTENLOP
+            // 
+            this.colTENLOP.FieldName = "TENLOP";
+            this.colTENLOP.MinWidth = 25;
+            this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.Visible = true;
+            this.colTENLOP.VisibleIndex = 1;
+            this.colTENLOP.Width = 94;
+            // 
+            // colKHOAHOC
+            // 
+            this.colKHOAHOC.FieldName = "KHOAHOC";
+            this.colKHOAHOC.MinWidth = 25;
+            this.colKHOAHOC.Name = "colKHOAHOC";
+            this.colKHOAHOC.Visible = true;
+            this.colKHOAHOC.VisibleIndex = 2;
+            this.colKHOAHOC.Width = 94;
+            // 
+            // colMAKHOA
+            // 
+            this.colMAKHOA.FieldName = "MAKHOA";
+            this.colMAKHOA.MinWidth = 25;
+            this.colMAKHOA.Name = "colMAKHOA";
+            this.colMAKHOA.Visible = true;
+            this.colMAKHOA.VisibleIndex = 3;
+            this.colMAKHOA.Width = 94;
             // 
             // tableAdapterManager
             // 
@@ -357,6 +408,8 @@ namespace DXApplication1
             this.txtMalop.Location = new System.Drawing.Point(126, 71);
             this.txtMalop.MenuManager = this.barManager1;
             this.txtMalop.Name = "txtMalop";
+            this.txtMalop.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMalop.Properties.Appearance.Options.UseFont = true;
             this.txtMalop.Size = new System.Drawing.Size(167, 22);
             this.txtMalop.TabIndex = 77;
             // 
@@ -365,6 +418,8 @@ namespace DXApplication1
             this.txtKhoahoc.Location = new System.Drawing.Point(126, 149);
             this.txtKhoahoc.MenuManager = this.barManager1;
             this.txtKhoahoc.Name = "txtKhoahoc";
+            this.txtKhoahoc.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtKhoahoc.Properties.Appearance.Options.UseFont = true;
             this.txtKhoahoc.Size = new System.Drawing.Size(167, 22);
             this.txtKhoahoc.TabIndex = 76;
             // 
@@ -373,6 +428,8 @@ namespace DXApplication1
             this.txtLop.Location = new System.Drawing.Point(126, 115);
             this.txtLop.MenuManager = this.barManager1;
             this.txtLop.Name = "txtLop";
+            this.txtLop.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtLop.Properties.Appearance.Options.UseFont = true;
             this.txtLop.Size = new System.Drawing.Size(167, 22);
             this.txtLop.TabIndex = 14;
             // 
@@ -380,6 +437,7 @@ namespace DXApplication1
             // 
             this.cbbMaKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbbMaKhoa.Enabled = false;
+            this.cbbMaKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbMaKhoa.FormattingEnabled = true;
             this.cbbMaKhoa.Location = new System.Drawing.Point(126, 188);
             this.cbbMaKhoa.Name = "cbbMaKhoa";
@@ -441,11 +499,24 @@ namespace DXApplication1
             // 
             this.sP_LAYTTLOPTheoKhoaTableAdapter.ClearBeforeFill = true;
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Location = new System.Drawing.Point(506, 38);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(119, 24);
+            this.labelControl3.TabIndex = 79;
+            this.labelControl3.Text = "Quản Lý Lớp";
+            // 
             // FrLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 713);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.MaKhoa);
             this.Controls.Add(this.panelControl4);
@@ -459,8 +530,8 @@ namespace DXApplication1
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrLop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrLop";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -520,5 +591,10 @@ namespace DXApplication1
         private DevExpress.XtraGrid.GridControl sP_LAYTTLOPTheoKhoaGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colKHOAHOC;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKHOA;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

@@ -48,11 +48,14 @@ namespace DXApplication1
             this.txbXacNhanMK = new DevExpress.XtraEditors.TextEdit();
             this.virtualServerModeSource1 = new DevExpress.Data.VirtualServerModeSource(this.components);
             this.virtualServerModeSource2 = new DevExpress.Data.VirtualServerModeSource(this.components);
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txbTenLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbXacNhanMK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -60,7 +63,7 @@ namespace DXApplication1
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(450, 135);
+            this.label6.Location = new System.Drawing.Point(174, 141);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 17);
             this.label6.TabIndex = 28;
@@ -70,20 +73,21 @@ namespace DXApplication1
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(738, 478);
+            this.btnThoat.Location = new System.Drawing.Point(496, 482);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(141, 41);
+            this.btnThoat.Size = new System.Drawing.Size(159, 41);
             this.btnThoat.TabIndex = 27;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnXacNhan
             // 
             this.btnXacNhan.BackColor = System.Drawing.Color.Blue;
             this.btnXacNhan.ForeColor = System.Drawing.Color.White;
-            this.btnXacNhan.Location = new System.Drawing.Point(464, 478);
+            this.btnXacNhan.Location = new System.Drawing.Point(188, 482);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(141, 41);
+            this.btnXacNhan.Size = new System.Drawing.Size(159, 41);
             this.btnXacNhan.TabIndex = 26;
             this.btnXacNhan.Text = "XÁC NHẬN";
             this.btnXacNhan.UseVisualStyleBackColor = false;
@@ -93,7 +97,7 @@ namespace DXApplication1
             // 
             this.rdSV.AutoSize = true;
             this.rdSV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rdSV.Location = new System.Drawing.Point(708, 408);
+            this.rdSV.Location = new System.Drawing.Point(474, 414);
             this.rdSV.Name = "rdSV";
             this.rdSV.Size = new System.Drawing.Size(89, 21);
             this.rdSV.TabIndex = 25;
@@ -106,7 +110,7 @@ namespace DXApplication1
             // 
             this.rdKHOA.AutoSize = true;
             this.rdKHOA.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rdKHOA.Location = new System.Drawing.Point(608, 406);
+            this.rdKHOA.Location = new System.Drawing.Point(364, 414);
             this.rdKHOA.Name = "rdKHOA";
             this.rdKHOA.Size = new System.Drawing.Size(62, 21);
             this.rdKHOA.TabIndex = 24;
@@ -118,10 +122,11 @@ namespace DXApplication1
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(514, 408);
+            this.label5.Location = new System.Drawing.Point(251, 412);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 17);
+            this.label5.Size = new System.Drawing.Size(61, 17);
             this.label5.TabIndex = 19;
             this.label5.Text = "Vai Trò";
             // 
@@ -130,7 +135,7 @@ namespace DXApplication1
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(413, 338);
+            this.label4.Location = new System.Drawing.Point(142, 346);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 17);
             this.label4.TabIndex = 18;
@@ -141,7 +146,7 @@ namespace DXApplication1
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(496, 267);
+            this.label3.Location = new System.Drawing.Point(226, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 17;
@@ -152,7 +157,7 @@ namespace DXApplication1
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(460, 197);
+            this.label2.Location = new System.Drawing.Point(189, 203);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 16;
@@ -162,18 +167,21 @@ namespace DXApplication1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(560, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label1.Location = new System.Drawing.Point(280, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(261, 35);
             this.label1.TabIndex = 15;
             this.label1.Text = "TẠO TÀI KHOẢN";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // PGV
             // 
             this.PGV.AutoSize = true;
             this.PGV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PGV.Location = new System.Drawing.Point(815, 406);
+            this.PGV.Location = new System.Drawing.Point(598, 414);
             this.PGV.Name = "PGV";
             this.PGV.Size = new System.Drawing.Size(94, 21);
             this.PGV.TabIndex = 30;
@@ -190,62 +198,76 @@ namespace DXApplication1
             // 
             this.cbbMAGV.Enabled = false;
             this.cbbMAGV.FormattingEnabled = true;
-            this.cbbMAGV.Location = new System.Drawing.Point(621, 197);
+            this.cbbMAGV.Location = new System.Drawing.Point(364, 201);
             this.cbbMAGV.Name = "cbbMAGV";
-            this.cbbMAGV.Size = new System.Drawing.Size(162, 24);
+            this.cbbMAGV.Size = new System.Drawing.Size(182, 24);
             this.cbbMAGV.TabIndex = 31;
             // 
             // txbTenLogin
             // 
             this.txbTenLogin.Enabled = false;
-            this.txbTenLogin.Location = new System.Drawing.Point(621, 132);
+            this.txbTenLogin.Location = new System.Drawing.Point(364, 136);
             this.txbTenLogin.Name = "txbTenLogin";
-            this.txbTenLogin.Size = new System.Drawing.Size(162, 22);
+            this.txbTenLogin.Size = new System.Drawing.Size(182, 22);
             this.txbTenLogin.TabIndex = 32;
             // 
             // txbMatKhau
             // 
-            this.txbMatKhau.Location = new System.Drawing.Point(621, 264);
+            this.txbMatKhau.Location = new System.Drawing.Point(364, 268);
             this.txbMatKhau.Name = "txbMatKhau";
-            this.txbMatKhau.Size = new System.Drawing.Size(162, 22);
+            this.txbMatKhau.Size = new System.Drawing.Size(182, 22);
             this.txbMatKhau.TabIndex = 33;
             // 
             // txbXacNhanMK
             // 
-            this.txbXacNhanMK.Location = new System.Drawing.Point(621, 335);
+            this.txbXacNhanMK.Location = new System.Drawing.Point(364, 339);
             this.txbXacNhanMK.Name = "txbXacNhanMK";
-            this.txbXacNhanMK.Size = new System.Drawing.Size(162, 22);
+            this.txbXacNhanMK.Size = new System.Drawing.Size(182, 22);
             this.txbXacNhanMK.TabIndex = 34;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.ContentImageAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.panelControl1.Controls.Add(this.txbXacNhanMK);
+            this.panelControl1.Controls.Add(this.label1);
+            this.panelControl1.Controls.Add(this.txbMatKhau);
+            this.panelControl1.Controls.Add(this.label6);
+            this.panelControl1.Controls.Add(this.txbTenLogin);
+            this.panelControl1.Controls.Add(this.cbbMAGV);
+            this.panelControl1.Controls.Add(this.label2);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Controls.Add(this.label3);
+            this.panelControl1.Controls.Add(this.btnXacNhan);
+            this.panelControl1.Controls.Add(this.PGV);
+            this.panelControl1.Controls.Add(this.label4);
+            this.panelControl1.Controls.Add(this.label5);
+            this.panelControl1.Controls.Add(this.rdKHOA);
+            this.panelControl1.Controls.Add(this.rdSV);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(763, 624);
+            this.panelControl1.TabIndex = 35;
             // 
             // frtaoTK
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1383, 624);
-            this.Controls.Add(this.txbXacNhanMK);
-            this.Controls.Add(this.txbMatKhau);
-            this.Controls.Add(this.txbTenLogin);
-            this.Controls.Add(this.cbbMAGV);
-            this.Controls.Add(this.PGV);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnXacNhan);
-            this.Controls.Add(this.rdSV);
-            this.Controls.Add(this.rdKHOA);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(763, 624);
+            this.Controls.Add(this.panelControl1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Name = "frtaoTK";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tạo Tài Khoản";
             ((System.ComponentModel.ISupportInitialize)(this.txbTenLogin.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbXacNhanMK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.virtualServerModeSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -268,5 +290,6 @@ namespace DXApplication1
         private DevExpress.XtraEditors.TextEdit txbXacNhanMK;
         private DevExpress.Data.VirtualServerModeSource virtualServerModeSource1;
         private DevExpress.Data.VirtualServerModeSource virtualServerModeSource2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }

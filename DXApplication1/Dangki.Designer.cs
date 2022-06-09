@@ -36,9 +36,11 @@ namespace DXApplication1
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label5;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dangki));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnHuyDK = new System.Windows.Forms.Button();
             this.btkDK = new System.Windows.Forms.Button();
             this.mALTCSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.dANGKYBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -66,6 +68,12 @@ namespace DXApplication1
             this.sp_LayTTDKGridControl = new DevExpress.XtraGrid.GridControl();
             this.sp_LayTTDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMALTC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIEM_CC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIEM_GK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIEM_CK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHUYDANGKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.sP_TTLTCGridControl = new DevExpress.XtraGrid.GridControl();
@@ -81,12 +89,6 @@ namespace DXApplication1
             this.sP_FULLMARKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_FULLMARKTableAdapter = new DXApplication1.QLDSV_TCDataSet3TableAdapters.SP_FULLMARKTableAdapter();
             this.sp_LayTTDKTableAdapter = new DXApplication1.QLDSV_TCDataSet3TableAdapters.sp_LayTTDKTableAdapter();
-            this.colMALTC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDIEM_CC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDIEM_GK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDIEM_CK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHUYDANGKY = new DevExpress.XtraGrid.Columns.GridColumn();
             mASVLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -194,9 +196,9 @@ namespace DXApplication1
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.panelControl5);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl1.Location = new System.Drawing.Point(0, 27);
+            this.panelControl1.Location = new System.Drawing.Point(0, 32);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(578, 1010);
+            this.panelControl1.Size = new System.Drawing.Size(578, 1005);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl5
@@ -213,6 +215,7 @@ namespace DXApplication1
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnHuyDK);
             this.panelControl2.Controls.Add(this.btkDK);
             this.panelControl2.Controls.Add(label2);
             this.panelControl2.Controls.Add(this.mALTCSpinEdit);
@@ -224,12 +227,25 @@ namespace DXApplication1
             this.panelControl2.Size = new System.Drawing.Size(531, 380);
             this.panelControl2.TabIndex = 1;
             // 
+            // btnHuyDK
+            // 
+            this.btnHuyDK.BackColor = System.Drawing.Color.Lime;
+            this.btnHuyDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHuyDK.ForeColor = System.Drawing.Color.Maroon;
+            this.btnHuyDK.Location = new System.Drawing.Point(248, 279);
+            this.btnHuyDK.Name = "btnHuyDK";
+            this.btnHuyDK.Size = new System.Drawing.Size(122, 30);
+            this.btnHuyDK.TabIndex = 7;
+            this.btnHuyDK.Text = "Hủy Đăng Kí";
+            this.btnHuyDK.UseVisualStyleBackColor = false;
+            this.btnHuyDK.Click += new System.EventHandler(this.btnHuyDK_Click);
+            // 
             // btkDK
             // 
             this.btkDK.BackColor = System.Drawing.Color.Lime;
             this.btkDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btkDK.ForeColor = System.Drawing.Color.Maroon;
-            this.btkDK.Location = new System.Drawing.Point(172, 284);
+            this.btkDK.Location = new System.Drawing.Point(82, 279);
             this.btkDK.Name = "btkDK";
             this.btkDK.Size = new System.Drawing.Size(122, 30);
             this.btkDK.TabIndex = 6;
@@ -245,9 +261,12 @@ namespace DXApplication1
             0,
             0,
             0});
+            this.mALTCSpinEdit.Enabled = false;
             this.mALTCSpinEdit.Location = new System.Drawing.Point(172, 220);
             this.mALTCSpinEdit.MenuManager = this.barManager1;
             this.mALTCSpinEdit.Name = "mALTCSpinEdit";
+            this.mALTCSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.mALTCSpinEdit.Properties.Appearance.Options.UseFont = true;
             this.mALTCSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.mALTCSpinEdit.Size = new System.Drawing.Size(153, 24);
@@ -298,9 +317,13 @@ namespace DXApplication1
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "DangKi";
+            this.barButtonItem1.Caption = "cập Nhật";
             this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // bar3
             // 
@@ -320,7 +343,7 @@ namespace DXApplication1
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1736, 27);
+            this.barDockControlTop.Size = new System.Drawing.Size(1736, 32);
             // 
             // barDockControlBottom
             // 
@@ -334,24 +357,27 @@ namespace DXApplication1
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1010);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1005);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1736, 27);
+            this.barDockControlRight.Location = new System.Drawing.Point(1736, 32);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1010);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1005);
             // 
             // mASVTextEdit
             // 
             this.mASVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dANGKYBindingSource, "MASV", true));
+            this.mASVTextEdit.Enabled = false;
             this.mASVTextEdit.Location = new System.Drawing.Point(172, 161);
             this.mASVTextEdit.MenuManager = this.barManager1;
             this.mASVTextEdit.Name = "mASVTextEdit";
+            this.mASVTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.mASVTextEdit.Properties.Appearance.Options.UseFont = true;
             this.mASVTextEdit.Size = new System.Drawing.Size(155, 22);
             this.mASVTextEdit.TabIndex = 2;
             // 
@@ -474,6 +500,7 @@ namespace DXApplication1
             this.sp_LayTTDKGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             this.sp_LayTTDKGridControl.Click += new System.EventHandler(this.sp_LayTTDKGridControl_Click);
+            this.sp_LayTTDKGridControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.sp_LayTTDKGridControl_MouseClick);
             // 
             // sp_LayTTDKBindingSource
             // 
@@ -491,6 +518,61 @@ namespace DXApplication1
             this.colHUYDANGKY});
             this.gridView2.GridControl = this.sp_LayTTDKGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            // 
+            // colMALTC
+            // 
+            this.colMALTC.FieldName = "MALTC";
+            this.colMALTC.MinWidth = 25;
+            this.colMALTC.Name = "colMALTC";
+            this.colMALTC.Visible = true;
+            this.colMALTC.VisibleIndex = 0;
+            this.colMALTC.Width = 94;
+            // 
+            // colMASV
+            // 
+            this.colMASV.FieldName = "MASV";
+            this.colMASV.MinWidth = 25;
+            this.colMASV.Name = "colMASV";
+            this.colMASV.Visible = true;
+            this.colMASV.VisibleIndex = 1;
+            this.colMASV.Width = 94;
+            // 
+            // colDIEM_CC
+            // 
+            this.colDIEM_CC.FieldName = "DIEM_CC";
+            this.colDIEM_CC.MinWidth = 25;
+            this.colDIEM_CC.Name = "colDIEM_CC";
+            this.colDIEM_CC.Visible = true;
+            this.colDIEM_CC.VisibleIndex = 2;
+            this.colDIEM_CC.Width = 94;
+            // 
+            // colDIEM_GK
+            // 
+            this.colDIEM_GK.FieldName = "DIEM_GK";
+            this.colDIEM_GK.MinWidth = 25;
+            this.colDIEM_GK.Name = "colDIEM_GK";
+            this.colDIEM_GK.Visible = true;
+            this.colDIEM_GK.VisibleIndex = 3;
+            this.colDIEM_GK.Width = 94;
+            // 
+            // colDIEM_CK
+            // 
+            this.colDIEM_CK.FieldName = "DIEM_CK";
+            this.colDIEM_CK.MinWidth = 25;
+            this.colDIEM_CK.Name = "colDIEM_CK";
+            this.colDIEM_CK.Visible = true;
+            this.colDIEM_CK.VisibleIndex = 4;
+            this.colDIEM_CK.Width = 94;
+            // 
+            // colHUYDANGKY
+            // 
+            this.colHUYDANGKY.FieldName = "HUYDANGKY";
+            this.colHUYDANGKY.MinWidth = 25;
+            this.colHUYDANGKY.Name = "colHUYDANGKY";
+            this.colHUYDANGKY.Visible = true;
+            this.colHUYDANGKY.VisibleIndex = 5;
+            this.colHUYDANGKY.Width = 94;
             // 
             // labelControl4
             // 
@@ -510,7 +592,7 @@ namespace DXApplication1
             this.panelControl4.Controls.Add(this.sP_TTLTCGridControl);
             this.panelControl4.Controls.Add(this.labelControl3);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(578, 27);
+            this.panelControl4.Location = new System.Drawing.Point(578, 32);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1158, 352);
             this.panelControl4.TabIndex = 1;
@@ -538,6 +620,7 @@ namespace DXApplication1
             // 
             this.gridView1.GridControl = this.sP_TTLTCGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
             // labelControl3
             // 
@@ -597,60 +680,6 @@ namespace DXApplication1
             // 
             this.sp_LayTTDKTableAdapter.ClearBeforeFill = true;
             // 
-            // colMALTC
-            // 
-            this.colMALTC.FieldName = "MALTC";
-            this.colMALTC.MinWidth = 25;
-            this.colMALTC.Name = "colMALTC";
-            this.colMALTC.Visible = true;
-            this.colMALTC.VisibleIndex = 0;
-            this.colMALTC.Width = 94;
-            // 
-            // colMASV
-            // 
-            this.colMASV.FieldName = "MASV";
-            this.colMASV.MinWidth = 25;
-            this.colMASV.Name = "colMASV";
-            this.colMASV.Visible = true;
-            this.colMASV.VisibleIndex = 1;
-            this.colMASV.Width = 94;
-            // 
-            // colDIEM_CC
-            // 
-            this.colDIEM_CC.FieldName = "DIEM_CC";
-            this.colDIEM_CC.MinWidth = 25;
-            this.colDIEM_CC.Name = "colDIEM_CC";
-            this.colDIEM_CC.Visible = true;
-            this.colDIEM_CC.VisibleIndex = 2;
-            this.colDIEM_CC.Width = 94;
-            // 
-            // colDIEM_GK
-            // 
-            this.colDIEM_GK.FieldName = "DIEM_GK";
-            this.colDIEM_GK.MinWidth = 25;
-            this.colDIEM_GK.Name = "colDIEM_GK";
-            this.colDIEM_GK.Visible = true;
-            this.colDIEM_GK.VisibleIndex = 3;
-            this.colDIEM_GK.Width = 94;
-            // 
-            // colDIEM_CK
-            // 
-            this.colDIEM_CK.FieldName = "DIEM_CK";
-            this.colDIEM_CK.MinWidth = 25;
-            this.colDIEM_CK.Name = "colDIEM_CK";
-            this.colDIEM_CK.Visible = true;
-            this.colDIEM_CK.VisibleIndex = 4;
-            this.colDIEM_CK.Width = 94;
-            // 
-            // colHUYDANGKY
-            // 
-            this.colHUYDANGKY.FieldName = "HUYDANGKY";
-            this.colHUYDANGKY.MinWidth = 25;
-            this.colHUYDANGKY.Name = "colHUYDANGKY";
-            this.colHUYDANGKY.Visible = true;
-            this.colHUYDANGKY.VisibleIndex = 5;
-            this.colHUYDANGKY.Width = 94;
-            // 
             // Dangki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -666,7 +695,7 @@ namespace DXApplication1
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Dangki";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Đăng Ký Tín Chỉ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Dangki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -758,5 +787,6 @@ namespace DXApplication1
         private DevExpress.XtraGrid.Columns.GridColumn colDIEM_GK;
         private DevExpress.XtraGrid.Columns.GridColumn colDIEM_CK;
         private DevExpress.XtraGrid.Columns.GridColumn colHUYDANGKY;
+        private System.Windows.Forms.Button btnHuyDK;
     }
 }

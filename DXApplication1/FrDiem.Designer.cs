@@ -38,7 +38,6 @@ namespace DXApplication1
             this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSV_TCDataSet3 = new DXApplication1.QLDSV_TCDataSet3();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -53,8 +52,6 @@ namespace DXApplication1
             this.mONHOCTableAdapter = new DXApplication1.QLDSV_TCDataSet3TableAdapters.MONHOCTableAdapter();
             this.tableAdapterManager = new DXApplication1.QLDSV_TCDataSet3TableAdapters.TableAdapterManager();
             this.excelDataSource1 = new DevExpress.DataAccess.Excel.ExcelDataSource();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.MaKhoa = new System.Windows.Forms.ComboBox();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.button3 = new System.Windows.Forms.Button();
@@ -71,6 +68,9 @@ namespace DXApplication1
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.DiemGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.MaKhoa = new System.Windows.Forms.ComboBox();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -84,17 +84,17 @@ namespace DXApplication1
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 644);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 676);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1348, 32);
+            this.barDockControlRight.Location = new System.Drawing.Point(1348, 0);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 644);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 676);
             // 
             // barDockControlBottom
             // 
@@ -108,7 +108,7 @@ namespace DXApplication1
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
             this.barDockControlTop.Size = new System.Drawing.Size(1348, 0);
             // 
@@ -125,7 +125,6 @@ namespace DXApplication1
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControl1);
             this.barManager1.DockControls.Add(this.barDockControl2);
@@ -141,21 +140,6 @@ namespace DXApplication1
             this.barButtonItem6});
             this.barManager1.MaxItemId = 6;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6)});
-            this.bar1.Text = "Tools";
             // 
             // barButtonItem1
             // 
@@ -228,7 +212,7 @@ namespace DXApplication1
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager1;
-            this.barDockControl1.Size = new System.Drawing.Size(1348, 32);
+            this.barDockControl1.Size = new System.Drawing.Size(1348, 0);
             // 
             // barDockControl2
             // 
@@ -242,17 +226,17 @@ namespace DXApplication1
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 32);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager1;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 644);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 676);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1348, 32);
+            this.barDockControl4.Location = new System.Drawing.Point(1348, 0);
             this.barDockControl4.Manager = this.barManager1;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 644);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 676);
             // 
             // mONHOCTableAdapter
             // 
@@ -274,24 +258,6 @@ namespace DXApplication1
             // 
             this.excelDataSource1.Name = "excelDataSource1";
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(427, 82);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(31, 16);
-            this.labelControl2.TabIndex = 73;
-            this.labelControl2.Text = "Khoa";
-            // 
-            // MaKhoa
-            // 
-            this.MaKhoa.FormattingEnabled = true;
-            this.MaKhoa.Location = new System.Drawing.Point(476, 79);
-            this.MaKhoa.Name = "MaKhoa";
-            this.MaKhoa.Size = new System.Drawing.Size(236, 24);
-            this.MaKhoa.TabIndex = 72;
-            // 
             // sqlDataSource1
             // 
             this.sqlDataSource1.Name = "sqlDataSource1";
@@ -310,7 +276,7 @@ namespace DXApplication1
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(0, 118);
+            this.panelControl1.Location = new System.Drawing.Point(17, 118);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(596, 209);
             this.panelControl1.TabIndex = 82;
@@ -419,15 +385,19 @@ namespace DXApplication1
             // 
             // labelControl1
             // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Ivory;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(210, 5);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 17);
+            this.labelControl1.Size = new System.Drawing.Size(117, 17);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Nhập Thông Tin";
             // 
             // DiemGridControl
             // 
-            this.DiemGridControl.Location = new System.Drawing.Point(631, 123);
+            this.DiemGridControl.Location = new System.Drawing.Point(619, 118);
             this.DiemGridControl.MainView = this.gridView1;
             this.DiemGridControl.MenuManager = this.barManager1;
             this.DiemGridControl.Name = "DiemGridControl";
@@ -441,11 +411,42 @@ namespace DXApplication1
             this.gridView1.GridControl = this.DiemGridControl;
             this.gridView1.Name = "gridView1";
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(427, 82);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(31, 16);
+            this.labelControl2.TabIndex = 73;
+            this.labelControl2.Text = "Khoa";
+            // 
+            // MaKhoa
+            // 
+            this.MaKhoa.FormattingEnabled = true;
+            this.MaKhoa.Location = new System.Drawing.Point(476, 79);
+            this.MaKhoa.Name = "MaKhoa";
+            this.MaKhoa.Size = new System.Drawing.Size(236, 24);
+            this.MaKhoa.TabIndex = 72;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseForeColor = true;
+            this.labelControl7.Location = new System.Drawing.Point(476, 31);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(132, 24);
+            this.labelControl7.TabIndex = 92;
+            this.labelControl7.Text = "Quản Lý Điểm";
+            // 
             // FrDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 694);
+            this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.DiemGridControl);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.labelControl2);
@@ -458,8 +459,10 @@ namespace DXApplication1
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrDiem";
-            this.Text = "FrDiem";
+            this.Text = "Nhập Điểm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
@@ -483,7 +486,6 @@ namespace DXApplication1
         private System.Windows.Forms.BindingSource mONHOCBindingSource;
         private QLDSV_TCDataSet3 qLDSV_TCDataSet3;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
@@ -498,8 +500,6 @@ namespace DXApplication1
         private QLDSV_TCDataSet3TableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private QLDSV_TCDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.DataAccess.Excel.ExcelDataSource excelDataSource1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private System.Windows.Forms.ComboBox MaKhoa;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.ComboBox cbNhom;
@@ -516,5 +516,8 @@ namespace DXApplication1
         private System.Windows.Forms.Button btnbatdau;
         private DevExpress.XtraGrid.GridControl DiemGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.ComboBox MaKhoa;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

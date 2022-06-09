@@ -70,15 +70,15 @@ namespace DXApplication1
             mASVTextEdit.Text = Program.username;
             loadcbNienkhoa();
             cbbNienKhoa.SelectedIndex = 0;
-          
-          //  LOADDSDK();
+
+            //  LOADDSDK();
 
         }
 
-    
 
 
-        
+
+
         private void LOPTINCHIgridControl_MouseClick(object sender, MouseEventArgs e)
         {
             if (bdsLopTinchi.Count > 0)
@@ -91,7 +91,7 @@ namespace DXApplication1
         {
             try
             {
-                this.sP_TTLTCTableAdapter.Fill(this.qLDSV_TCDataSet3.SP_TTLTC,cbbNienKhoa.Text, new System.Nullable<int>(((int)(System.Convert.ChangeType(cbbHocki.Text, typeof(int))))));
+                this.sP_TTLTCTableAdapter.Fill(this.qLDSV_TCDataSet3.SP_TTLTC, cbbNienKhoa.Text, new System.Nullable<int>(((int)(System.Convert.ChangeType(cbbHocki.Text, typeof(int))))));
             }
             catch (System.Exception ex)
             {
@@ -158,7 +158,7 @@ namespace DXApplication1
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -167,7 +167,7 @@ namespace DXApplication1
             if (sP_TTLTCBindingSource.Count > 0)
             {
                 mALTCSpinEdit.Text = ((DataRowView)sP_TTLTCBindingSource[sP_TTLTCBindingSource.Position])["MALTC"].ToString();
-                  
+
             }
 
         }
@@ -175,6 +175,57 @@ namespace DXApplication1
         private void sp_LayTTDKGridControl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHuyDK_Click(object sender, EventArgs e)
+        {
+            if (mALTCSpinEdit.Value == 0)
+            {
+                MessageBox.Show("Mã Lớp Tín Chỉ không được thiếu!", "", MessageBoxButtons.OK);
+
+                return;
+            }
+            if (MessageBox.Show("Bạn có chắc chắn muốn hủy đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+                string cmd = "EXEC [dbo].[SP_XULY_LTC] '" + txtmsv.Text + "' , '" + mALTCSpinEdit.Text + "', " + 2;
+                if (Program.ExecSqlNonQuery(cmd) == 0)
+                {
+                    MessageBox.Show("Hủy đăng kí thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Hủy đăng kí thất bại");
+                }
+
+
+            }
+        }
+
+        private void sp_LayTTDKGridControl_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (((DataRowView)sp_LayTTDKBindingSource[sp_LayTTDKBindingSource.Position])["MALTC"] != null)
+            {
+                mALTCSpinEdit.Text = ((DataRowView)sp_LayTTDKBindingSource[sp_LayTTDKBindingSource.Position])["MALTC"].ToString();
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                this.sp_LayTTDKTableAdapter.Fill(this.qLDSV_TCDataSet3.sp_LayTTDK, txtmsv.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            txtmsv.Text = Program.username;
+            LoadtableDK();
+            txtHT.Text = Program.mHoten;
+            mASVTextEdit.Text = Program.username;
+            loadcbNienkhoa();
+            cbbNienKhoa.SelectedIndex = 0;
         }
     }
 }

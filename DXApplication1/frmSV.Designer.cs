@@ -52,6 +52,7 @@ namespace DXApplication1
             this.btncapnhat = new DevExpress.XtraBars.BarButtonItem();
             this.btnthoat = new DevExpress.XtraBars.BarButtonItem();
             this.btnluu = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -98,7 +99,6 @@ namespace DXApplication1
             this.tENTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.hOTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             mASVLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
             pHAILabel = new System.Windows.Forms.Label();
@@ -295,6 +295,16 @@ namespace DXApplication1
             this.btnluu.Name = "btnluu";
             this.btnluu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnluu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thoát";
+            this.barButtonItem1.Id = 6;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // bar3
             // 
@@ -569,7 +579,7 @@ namespace DXApplication1
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(206, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(173, 52);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -584,7 +594,7 @@ namespace DXApplication1
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(923, 203);
+            this.dataGridView1.Size = new System.Drawing.Size(930, 234);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -699,6 +709,8 @@ namespace DXApplication1
             this.Ngaysinh.Location = new System.Drawing.Point(343, 89);
             this.Ngaysinh.MenuManager = this.barManager1;
             this.Ngaysinh.Name = "Ngaysinh";
+            this.Ngaysinh.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Ngaysinh.Properties.Appearance.Options.UseFont = true;
             this.Ngaysinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Ngaysinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -732,6 +744,8 @@ namespace DXApplication1
             this.dIACHITextEdit.Location = new System.Drawing.Point(584, 91);
             this.dIACHITextEdit.MenuManager = this.barManager1;
             this.dIACHITextEdit.Name = "dIACHITextEdit";
+            this.dIACHITextEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dIACHITextEdit.Properties.Appearance.Options.UseFont = true;
             this.dIACHITextEdit.Size = new System.Drawing.Size(374, 22);
             this.dIACHITextEdit.TabIndex = 9;
             // 
@@ -751,6 +765,8 @@ namespace DXApplication1
             this.tENTextEdit.Location = new System.Drawing.Point(584, 50);
             this.tENTextEdit.MenuManager = this.barManager1;
             this.tENTextEdit.Name = "tENTextEdit";
+            this.tENTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tENTextEdit.Properties.Appearance.Options.UseFont = true;
             this.tENTextEdit.Size = new System.Drawing.Size(125, 22);
             this.tENTextEdit.TabIndex = 5;
             // 
@@ -760,6 +776,8 @@ namespace DXApplication1
             this.hOTextEdit.Location = new System.Drawing.Point(321, 48);
             this.hOTextEdit.MenuManager = this.barManager1;
             this.hOTextEdit.Name = "hOTextEdit";
+            this.hOTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.hOTextEdit.Properties.Appearance.Options.UseFont = true;
             this.hOTextEdit.Size = new System.Drawing.Size(125, 22);
             this.hOTextEdit.TabIndex = 3;
             // 
@@ -767,19 +785,11 @@ namespace DXApplication1
             // 
             this.sqlDataSource1.Name = "sqlDataSource1";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Thoát";
-            this.barButtonItem1.Id = 6;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // frmSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1295, 668);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
@@ -797,8 +807,8 @@ namespace DXApplication1
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmSV";
-            this.Text = "frmSV";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản Lý Sinh Viên";
             this.Load += new System.EventHandler(this.frmSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet3)).EndInit();
