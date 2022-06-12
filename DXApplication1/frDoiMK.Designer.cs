@@ -37,17 +37,17 @@ namespace DXApplication1
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.sinhvienTableAdapter1 = new DXApplication1.QLDSV_TCDataSet1TableAdapters.SINHVIENTableAdapter();
-            this.txtXacNhanMKMoi = new DevExpress.XtraEditors.TextEdit();
-            this.txtMKMoi = new DevExpress.XtraEditors.TextEdit();
             this.txbTenLogin = new DevExpress.XtraEditors.TextEdit();
-            this.txtMKCu = new DevExpress.XtraEditors.TextEdit();
             this.x = new DevExpress.XtraEditors.PanelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.txtXacNhanMKMoi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMKMoi.Properties)).BeginInit();
+            this.txtMKMoi = new DevExpress.XtraEditors.TextEdit();
+            this.txtXacNhanMKMoi = new DevExpress.XtraEditors.TextEdit();
+            this.txtMKCu = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txbTenLogin.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMKCu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).BeginInit();
             this.x.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMKMoi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtXacNhanMKMoi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMKCu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -134,45 +134,24 @@ namespace DXApplication1
             // 
             this.sinhvienTableAdapter1.ClearBeforeFill = true;
             // 
-            // txtXacNhanMKMoi
-            // 
-            this.txtXacNhanMKMoi.Location = new System.Drawing.Point(579, 277);
-            this.txtXacNhanMKMoi.Name = "txtXacNhanMKMoi";
-            this.txtXacNhanMKMoi.Size = new System.Drawing.Size(162, 22);
-            this.txtXacNhanMKMoi.TabIndex = 49;
-            // 
-            // txtMKMoi
-            // 
-            this.txtMKMoi.Location = new System.Drawing.Point(579, 215);
-            this.txtMKMoi.Name = "txtMKMoi";
-            this.txtMKMoi.Size = new System.Drawing.Size(162, 22);
-            this.txtMKMoi.TabIndex = 48;
-            // 
             // txbTenLogin
             // 
             this.txbTenLogin.Enabled = false;
             this.txbTenLogin.Location = new System.Drawing.Point(579, 85);
             this.txbTenLogin.Name = "txbTenLogin";
-            this.txbTenLogin.Size = new System.Drawing.Size(162, 22);
+            this.txbTenLogin.Size = new System.Drawing.Size(184, 22);
             this.txbTenLogin.TabIndex = 47;
             this.txbTenLogin.EditValueChanged += new System.EventHandler(this.txbTenLogin_EditValueChanged);
             // 
-            // txtMKCu
-            // 
-            this.txtMKCu.Location = new System.Drawing.Point(579, 147);
-            this.txtMKCu.Name = "txtMKCu";
-            this.txtMKCu.Size = new System.Drawing.Size(162, 22);
-            this.txtMKCu.TabIndex = 50;
-            // 
             // x
             // 
+            this.x.Controls.Add(this.txtMKMoi);
+            this.x.Controls.Add(this.txtXacNhanMKMoi);
+            this.x.Controls.Add(this.txtMKCu);
             this.x.Controls.Add(this.btnXacNhan);
             this.x.Controls.Add(this.btnThoat);
-            this.x.Controls.Add(this.txtMKCu);
             this.x.Controls.Add(this.label1);
-            this.x.Controls.Add(this.txtXacNhanMKMoi);
             this.x.Controls.Add(this.label6);
-            this.x.Controls.Add(this.txtMKMoi);
             this.x.Controls.Add(this.label3);
             this.x.Controls.Add(this.label4);
             this.x.Controls.Add(this.label2);
@@ -182,6 +161,30 @@ namespace DXApplication1
             this.x.Name = "x";
             this.x.Size = new System.Drawing.Size(1065, 599);
             this.x.TabIndex = 51;
+            // 
+            // txtMKMoi
+            // 
+            this.txtMKMoi.Location = new System.Drawing.Point(579, 217);
+            this.txtMKMoi.Name = "txtMKMoi";
+            this.txtMKMoi.Properties.PasswordChar = '*';
+            this.txtMKMoi.Size = new System.Drawing.Size(184, 22);
+            this.txtMKMoi.TabIndex = 53;
+            // 
+            // txtXacNhanMKMoi
+            // 
+            this.txtXacNhanMKMoi.Location = new System.Drawing.Point(579, 286);
+            this.txtXacNhanMKMoi.Name = "txtXacNhanMKMoi";
+            this.txtXacNhanMKMoi.Properties.PasswordChar = '*';
+            this.txtXacNhanMKMoi.Size = new System.Drawing.Size(184, 22);
+            this.txtXacNhanMKMoi.TabIndex = 52;
+            // 
+            // txtMKCu
+            // 
+            this.txtMKCu.Location = new System.Drawing.Point(579, 137);
+            this.txtMKCu.Name = "txtMKCu";
+            this.txtMKCu.Properties.PasswordChar = '*';
+            this.txtMKCu.Size = new System.Drawing.Size(184, 22);
+            this.txtMKCu.TabIndex = 51;
             // 
             // frDoiMK
             // 
@@ -193,13 +196,13 @@ namespace DXApplication1
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi Mật Khẩu ";
             this.Load += new System.EventHandler(this.frDoiMK_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtXacNhanMKMoi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMKMoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbTenLogin.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMKCu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).EndInit();
             this.x.ResumeLayout(false);
             this.x.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMKMoi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtXacNhanMKMoi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMKCu.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,10 +217,10 @@ namespace DXApplication1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private QLDSV_TCDataSet1TableAdapters.SINHVIENTableAdapter sinhvienTableAdapter1;
-        private DevExpress.XtraEditors.TextEdit txtXacNhanMKMoi;
-        private DevExpress.XtraEditors.TextEdit txtMKMoi;
         private DevExpress.XtraEditors.TextEdit txbTenLogin;
-        private DevExpress.XtraEditors.TextEdit txtMKCu;
         private DevExpress.XtraEditors.PanelControl x;
+        private DevExpress.XtraEditors.TextEdit txtMKMoi;
+        private DevExpress.XtraEditors.TextEdit txtXacNhanMKMoi;
+        private DevExpress.XtraEditors.TextEdit txtMKCu;
     }
 }

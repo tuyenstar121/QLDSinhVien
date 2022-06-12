@@ -153,7 +153,9 @@ namespace DXApplication1
             else if (resultCheckLogin == 0)
             {
                MessageBox.Show("Tạo tài khoản thành công !", "", MessageBoxButtons.OK);
-
+                if (rdKHOA.Checked) loadGVcombobox();
+                if (rdSV.Checked) loadsvcombobox();
+                if (PGV.Checked) loadGVcombobox();
             }
 
             return;

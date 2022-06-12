@@ -45,6 +45,14 @@ namespace DXApplication1
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnSV = new DevExpress.XtraBars.BarButtonItem();
             this.RbTK = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnTaoRole = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnXoaRole = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnCapRole = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnThuHoiRole = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnThemTK = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -178,11 +186,76 @@ namespace DXApplication1
             // RbTK
             // 
             this.RbTK.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup14,
+            this.ribbonPageGroup15,
+            this.ribbonPageGroup17,
+            this.ribbonPageGroup16,
             this.ribbonPageGroup4,
             this.ribbonPageGroup8,
             this.ribbonPageGroup9});
             this.RbTK.Name = "RbTK";
             this.RbTK.Text = "Tài Khoản";
+            // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnTaoRole);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            // 
+            // btnTaoRole
+            // 
+            this.btnTaoRole.Caption = "Tạo Role";
+            this.btnTaoRole.Enabled = false;
+            this.btnTaoRole.Id = 19;
+            this.btnTaoRole.ImageOptions.Image = global::DXApplication1.Properties.Resources.renamedatasource_16x16;
+            this.btnTaoRole.ImageOptions.LargeImage = global::DXApplication1.Properties.Resources.renamedatasource_32x32;
+            this.btnTaoRole.Name = "btnTaoRole";
+            this.btnTaoRole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaoRole_ItemClick);
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnXoaRole, true);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            // 
+            // btnXoaRole
+            // 
+            this.btnXoaRole.Caption = "Xóa Role";
+            this.btnXoaRole.Enabled = false;
+            this.btnXoaRole.Id = 20;
+            this.btnXoaRole.ImageOptions.Image = global::DXApplication1.Properties.Resources.resetmodeldifferences_16x16;
+            this.btnXoaRole.ImageOptions.LargeImage = global::DXApplication1.Properties.Resources.resetmodeldifferences_32x32;
+            this.btnXoaRole.Name = "btnXoaRole";
+            this.btnXoaRole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoaRole_ItemClick);
+            // 
+            // ribbonPageGroup17
+            // 
+            this.ribbonPageGroup17.ItemLinks.Add(this.btnCapRole);
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            // 
+            // btnCapRole
+            // 
+            this.btnCapRole.Caption = "Cấp Role User";
+            this.btnCapRole.Enabled = false;
+            this.btnCapRole.Id = 22;
+            this.btnCapRole.ImageOptions.Image = global::DXApplication1.Properties.Resources.bouser_16x16;
+            this.btnCapRole.ImageOptions.LargeImage = global::DXApplication1.Properties.Resources.bouser_32x32;
+            this.btnCapRole.Name = "btnCapRole";
+            this.btnCapRole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCapRole_ItemClick);
+            // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ImageOptions.Image = global::DXApplication1.Properties.Resources.borules_32x32;
+            this.ribbonPageGroup16.ItemLinks.Add(this.btnThuHoiRole);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            // 
+            // btnThuHoiRole
+            // 
+            this.btnThuHoiRole.Caption = "Thu Hồi Role User";
+            this.btnThuHoiRole.Enabled = false;
+            this.btnThuHoiRole.Id = 21;
+            this.btnThuHoiRole.ImageOptions.Image = global::DXApplication1.Properties.Resources.borules_16x16;
+            this.btnThuHoiRole.ImageOptions.LargeImage = global::DXApplication1.Properties.Resources.borules_32x321;
+            this.btnThuHoiRole.Name = "btnThuHoiRole";
+            this.btnThuHoiRole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuHoiRole_ItemClick);
             // 
             // ribbonPageGroup4
             // 
@@ -224,8 +297,8 @@ namespace DXApplication1
             this.btnDoiMK.Caption = "Đổi Mật Khẩu Tk";
             this.btnDoiMK.Enabled = false;
             this.btnDoiMK.Id = 15;
-            this.btnDoiMK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnDoiMK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnDoiMK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMK.ImageOptions.Image")));
+            this.btnDoiMK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoiMK.ImageOptions.LargeImage")));
             this.btnDoiMK.Name = "btnDoiMK";
             this.btnDoiMK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
@@ -295,10 +368,14 @@ namespace DXApplication1
             this.btnDK,
             this.btnBackup,
             this.btnNhapDiem,
-            this.btnDoiMK});
+            this.btnDoiMK,
+            this.btnTaoRole,
+            this.btnXoaRole,
+            this.btnThuHoiRole,
+            this.btnCapRole});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 23;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 329;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -467,5 +544,13 @@ namespace DXApplication1
         private System.Windows.Forms.ToolStripStatusLabel HoTen;
         private System.Windows.Forms.ToolStripStatusLabel nhom;
         private DevExpress.XtraBars.BarButtonItem btnDoiMK;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem btnTaoRole;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.BarButtonItem btnXoaRole;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem btnThuHoiRole;
+        private DevExpress.XtraBars.BarButtonItem btnCapRole;
     }
 }

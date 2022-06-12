@@ -67,9 +67,9 @@ namespace DXApplication1
             // 
             // btnDifferent_Backup
             // 
-            this.btnDifferent_Backup.BackColor = System.Drawing.Color.Lime;
+            this.btnDifferent_Backup.BackColor = System.Drawing.Color.ForestGreen;
             this.btnDifferent_Backup.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDifferent_Backup.ForeColor = System.Drawing.Color.Black;
+            this.btnDifferent_Backup.ForeColor = System.Drawing.Color.White;
             this.btnDifferent_Backup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDifferent_Backup.Location = new System.Drawing.Point(567, 125);
             this.btnDifferent_Backup.Name = "btnDifferent_Backup";
@@ -81,9 +81,9 @@ namespace DXApplication1
             // 
             // btnFull_Backup
             // 
-            this.btnFull_Backup.BackColor = System.Drawing.Color.Lime;
+            this.btnFull_Backup.BackColor = System.Drawing.Color.ForestGreen;
             this.btnFull_Backup.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFull_Backup.ForeColor = System.Drawing.Color.Black;
+            this.btnFull_Backup.ForeColor = System.Drawing.Color.White;
             this.btnFull_Backup.Location = new System.Drawing.Point(297, 126);
             this.btnFull_Backup.Name = "btnFull_Backup";
             this.btnFull_Backup.Size = new System.Drawing.Size(176, 28);
@@ -94,9 +94,9 @@ namespace DXApplication1
             // 
             // btnRestore
             // 
-            this.btnRestore.BackColor = System.Drawing.Color.Lime;
+            this.btnRestore.BackColor = System.Drawing.Color.ForestGreen;
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRestore.ForeColor = System.Drawing.Color.Black;
+            this.btnRestore.ForeColor = System.Drawing.Color.White;
             this.btnRestore.Location = new System.Drawing.Point(297, 125);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(154, 34);

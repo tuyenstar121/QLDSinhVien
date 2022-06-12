@@ -79,6 +79,26 @@ namespace DXApplication1
             }
         }
 
+        public static SqlDataReader ExecSqlDataReader2(string strlenh)
+        {
+            SqlDataReader myreader;
+            SqlCommand sqlcmd = new SqlCommand(strlenh, Program.conn);
+            sqlcmd.CommandType = CommandType.Text;
+            if (Program.conn.State == ConnectionState.Closed)
+                Program.conn.Open();
+            try
+            {
+                myreader = sqlcmd.ExecuteReader();
+                return myreader;
+            }
+            catch (SqlException ex)
+            {
+                Program.conn.Close();
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
         public static DataTable ExecSqlDataTable(string cmd)
         {
             DataTable dt = new DataTable();

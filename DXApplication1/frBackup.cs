@@ -20,11 +20,13 @@ namespace DXApplication1
             {
                 btnDifferent_Backup.Enabled = true;
                 btnRestore.Enabled = true;
+                checkIsDifferentialRestore.Enabled = true;
             }
             else
             {
                 btnDifferent_Backup.Enabled = false;
                 btnRestore.Enabled = false;
+                checkIsDifferentialRestore.Enabled = false; 
             }
         }
 
@@ -71,11 +73,13 @@ namespace DXApplication1
             {
                 btnDifferent_Backup.Enabled = true;
                 btnRestore.Enabled = true;
+                checkIsDifferentialRestore.Enabled = true;
             }
             else
             {
                 btnDifferent_Backup.Enabled = false;
                 btnRestore.Enabled = false;
+                checkIsDifferentialRestore.Enabled = false;
             }
         }
 

@@ -129,7 +129,10 @@ namespace DXApplication1
                 Program.myReader = Program.ExecSqlDataReader(cmd);
                 if (Program.myReader == null) return;
                 Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break
-                txtLogin.Text = Program.myReader.GetString(0);
+                if (Program.myReader.HasRows)
+                {
+                    txtLogin.Text = Program.myReader.GetString(0);
+                }
 
                 Program.myReader.Close();
 
@@ -142,8 +145,10 @@ namespace DXApplication1
                 Program.myReader = Program.ExecSqlDataReader(cmd);
                 if (Program.myReader == null) return;
                 Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break
-                txtLogin.Text = Program.myReader.GetString(0);
-
+                if (Program.myReader.HasRows)
+                {
+                    txtLogin.Text = Program.myReader.GetString(0);
+                }
                 Program.myReader.Close();
             }
             else if (rdKHOA.Checked)
@@ -154,8 +159,10 @@ namespace DXApplication1
                 Program.myReader = Program.ExecSqlDataReader(cmd);
                 if (Program.myReader == null) return;
                 Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break
-                txtLogin.Text = Program.myReader.GetString(0);
-
+                if (Program.myReader.HasRows)
+                {
+                    txtLogin.Text = Program.myReader.GetString(0);
+                }
                 Program.myReader.Close();
             }
         }
@@ -174,7 +181,10 @@ namespace DXApplication1
                 if (result.Equals(DialogResult.OK))
                 {
                     if (Program.ExecSqlNonQuery(cmd) == 0)
+                    {
                         MessageBox.Show("Xóa tài khoản thành công", "Thông báo");
+                        this.Close();
+                    }
                     else
                         MessageBox.Show("Xóa tài khoản thất bại !!!", "Lỗi");
                 }

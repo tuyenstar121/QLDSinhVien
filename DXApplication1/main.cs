@@ -76,6 +76,7 @@ namespace DXApplication1
                 btnDangxuat.Enabled = true;
                 btnBackup.Enabled = btnLop.Enabled = btnLopTC.Enabled = btnThemTK.Enabled = btnXoaTK.Enabled = btnLopTC.Enabled = btnMH.Enabled = btnSV.Enabled = true;
                 btnDoiMK.Enabled = true;
+                btnTaoRole.Enabled = btnXoaRole.Enabled = btnThuHoiRole.Enabled = btnCapRole.Enabled = true;
             }
         }
 
@@ -229,6 +230,58 @@ namespace DXApplication1
             else
             {
                FrXoaTK f = new FrXoaTK();
+                f.MdiParent = this;
+
+                f.Show();
+            }
+        }
+
+        private void btnTaoRole_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frTaoRole));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frTaoRole f = new frTaoRole();
+                f.MdiParent = this;
+
+                f.Show();
+            }
+        }
+
+        private void btnXoaRole_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrXoaRole));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FrXoaRole f = new FrXoaRole();
+                f.MdiParent = this;
+
+                f.Show();
+            }
+        }
+
+        private void btnCapRole_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frCapRole));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frCapRole f = new frCapRole();
+                f.MdiParent = this;
+
+                f.Show();
+            }
+        }
+
+        private void btnThuHoiRole_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frThuHoiRole));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frThuHoiRole f = new frThuHoiRole();
                 f.MdiParent = this;
 
                 f.Show();

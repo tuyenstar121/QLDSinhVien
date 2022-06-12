@@ -97,6 +97,12 @@
     <Compile Include="frBackup.Designer.cs">
       <DependentUpon>frBackup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frCapRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frCapRole.Designer.cs">
+      <DependentUpon>frCapRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="frDoiMK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="frLTC.Designer.cs">
       <DependentUpon>frLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frTaoRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frTaoRole.Designer.cs">
+      <DependentUpon>frTaoRole.cs</DependentUpon>
     </Compile>
     <Compile Include="frtaoTK.cs">
       <SubType>Form</SubType>
@@ -152,11 +164,23 @@
     <Compile Include="frXemDiem.Designer.cs">
       <DependentUpon>frXemDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrXoaRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrXoaRole.Designer.cs">
+      <DependentUpon>FrXoaRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrXoaTK.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrXoaTK.Designer.cs">
       <DependentUpon>FrXoaTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frThuHoiRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frThuHoiRole.Designer.cs">
+      <DependentUpon>frThuHoiRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\App_Start\FluentStateInfoConfig.cs" />
     <Compile Include="Program.cs" />
@@ -183,11 +207,17 @@
     <EmbeddedResource Include="frBackup.resx">
       <DependentUpon>frBackup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frCapRole.resx">
+      <DependentUpon>frCapRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frDoiMK.resx">
       <DependentUpon>frDoiMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frLTC.resx">
       <DependentUpon>frLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frTaoRole.resx">
+      <DependentUpon>frTaoRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frtaoTK.resx">
       <DependentUpon>frtaoTK.cs</DependentUpon>
@@ -210,8 +240,14 @@
     <EmbeddedResource Include="frXemDiem.resx">
       <DependentUpon>frXemDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrXoaRole.resx">
+      <DependentUpon>FrXoaRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrXoaTK.resx">
       <DependentUpon>FrXoaTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frThuHoiRole.resx">
+      <DependentUpon>frThuHoiRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -264,6 +300,15 @@
     <None Include="StateInfo.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\resetmodeldifferences_32x32.png" />
+    <None Include="Resources\resetmodeldifferences_16x16.png" />
+    <None Include="Resources\renamedatasource_32x32.png" />
+    <None Include="Resources\renamedatasource_16x16.png" />
+    <None Include="Resources\borules_32x32.png" />
+    <None Include="Resources\borules_32x321.png" />
+    <None Include="Resources\borules_16x16.png" />
+    <None Include="Resources\bouser_32x32.png" />
+    <None Include="Resources\bouser_16x16.png" />
     <Content Include="Scripts\navigation.mvc.js" />
     <Content Include="Scripts\navigation.mvc.min.js" />
   </ItemGroup>

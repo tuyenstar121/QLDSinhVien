@@ -192,6 +192,14 @@ namespace DXApplication1
                 if (Program.ExecSqlNonQuery(cmd) == 0)
                 {
                     MessageBox.Show("Hủy đăng kí thành công!");
+                    try
+                    {
+                        this.sp_LayTTDKTableAdapter.Fill(this.qLDSV_TCDataSet3.sp_LayTTDK, txtmsv.Text);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
                 }
                 else
                 {

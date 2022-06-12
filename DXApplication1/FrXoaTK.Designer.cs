@@ -68,10 +68,10 @@ namespace DXApplication1
             this.PGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.PGV.Location = new System.Drawing.Point(475, 95);
             this.PGV.Name = "PGV";
-            this.PGV.Size = new System.Drawing.Size(144, 21);
+            this.PGV.Size = new System.Drawing.Size(125, 21);
             this.PGV.TabIndex = 2;
             this.PGV.TabStop = true;
-            this.PGV.Text = "Phòng Giảng Viên";
+            this.PGV.Text = "Phòng Giáo Vụ";
             this.PGV.UseVisualStyleBackColor = false;
             this.PGV.CheckedChanged += new System.EventHandler(this.PGV_Click);
             // 

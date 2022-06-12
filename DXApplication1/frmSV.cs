@@ -79,8 +79,9 @@ namespace DXApplication1
         {
             //if (Program.mGroup.Equals("PGV") == false)
             //    MaKhoa.Enabled = false;
-            if (Program.mGroup.Equals("khoa")){
-                btnThem.Enabled = btnxoa.Enabled = btnsua.Enabled= btncapnhat.Enabled = btnluu.Enabled = btnthoat.Enabled = false; 
+            if (Program.mGroup.Equals("Khoa"))
+            {
+                btnThem.Enabled = btnxoa.Enabled = btnsua.Enabled  = btncapnhat.Enabled = btnluu.Enabled = btnthoat.Enabled = false;
             }
             loadKhoacomobox();
          

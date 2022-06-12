@@ -31,16 +31,16 @@ namespace DXApplication1
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.cbbRole = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.txbTaiKhoan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +79,49 @@ namespace DXApplication1
             this.panel1.UseWaitCursor = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(290, 33);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(160, 36);
+            this.labelControl2.TabIndex = 10;
+            this.labelControl2.Text = "Đăng Nhập";
+            this.labelControl2.UseWaitCursor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Lime;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(212, 271);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 36);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Đăng Nhập";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.UseWaitCursor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Lime;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(403, 272);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(163, 36);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.UseWaitCursor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // cbbRole
             // 
             this.cbbRole.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -87,7 +130,7 @@ namespace DXApplication1
             "Khoa",
             "Sinh Viên"});
             this.cbbRole.Location = new System.Drawing.Point(353, 103);
-            this.cbbRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbRole.Margin = new System.Windows.Forms.Padding(4);
             this.cbbRole.Name = "cbbRole";
             this.cbbRole.Size = new System.Drawing.Size(160, 24);
             this.cbbRole.TabIndex = 5;
@@ -112,6 +155,7 @@ namespace DXApplication1
             this.txbMatKhau.Location = new System.Drawing.Point(353, 196);
             this.txbMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbMatKhau.Name = "txbMatKhau";
+            this.txbMatKhau.PasswordChar = '*';
             this.txbMatKhau.Size = new System.Drawing.Size(157, 22);
             this.txbMatKhau.TabIndex = 3;
             this.txbMatKhau.UseWaitCursor = true;
@@ -138,34 +182,6 @@ namespace DXApplication1
             this.label2.Text = "PassWord";
             this.label2.UseWaitCursor = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(212, 271);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Đăng Nhập";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Lime;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(403, 272);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 36);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -182,18 +198,6 @@ namespace DXApplication1
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 16);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(290, 33);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(160, 36);
-            this.labelControl2.TabIndex = 10;
-            this.labelControl2.Text = "Đăng Nhập";
             // 
             // frDangNhap
             // 

@@ -198,7 +198,7 @@ namespace DXApplication1
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 32);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(578, 1005);
+            this.panelControl1.Size = new System.Drawing.Size(578, 747);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl5
@@ -222,7 +222,7 @@ namespace DXApplication1
             this.panelControl2.Controls.Add(mASVLabel);
             this.panelControl2.Controls.Add(this.mASVTextEdit);
             this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(27, 423);
+            this.panelControl2.Location = new System.Drawing.Point(12, 373);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(531, 380);
             this.panelControl2.TabIndex = 1;
@@ -343,15 +343,15 @@ namespace DXApplication1
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1736, 32);
+            this.barDockControlTop.Size = new System.Drawing.Size(1485, 32);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1037);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 779);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1736, 18);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1485, 18);
             // 
             // barDockControlLeft
             // 
@@ -359,15 +359,15 @@ namespace DXApplication1
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1005);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 747);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1736, 32);
+            this.barDockControlRight.Location = new System.Drawing.Point(1485, 32);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1005);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 747);
             // 
             // mASVTextEdit
             // 
@@ -482,9 +482,9 @@ namespace DXApplication1
             this.panelControl3.Controls.Add(this.sp_LayTTDKGridControl);
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(578, 414);
+            this.panelControl3.Location = new System.Drawing.Point(578, 384);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1158, 623);
+            this.panelControl3.Size = new System.Drawing.Size(907, 395);
             this.panelControl3.TabIndex = 1;
             // 
             // sp_LayTTDKGridControl
@@ -495,7 +495,7 @@ namespace DXApplication1
             this.sp_LayTTDKGridControl.MainView = this.gridView2;
             this.sp_LayTTDKGridControl.MenuManager = this.barManager1;
             this.sp_LayTTDKGridControl.Name = "sp_LayTTDKGridControl";
-            this.sp_LayTTDKGridControl.Size = new System.Drawing.Size(1154, 599);
+            this.sp_LayTTDKGridControl.Size = new System.Drawing.Size(903, 371);
             this.sp_LayTTDKGridControl.TabIndex = 3;
             this.sp_LayTTDKGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -594,7 +594,7 @@ namespace DXApplication1
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl4.Location = new System.Drawing.Point(578, 32);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1158, 352);
+            this.panelControl4.Size = new System.Drawing.Size(907, 352);
             this.panelControl4.TabIndex = 1;
             // 
             // sP_TTLTCGridControl
@@ -605,7 +605,7 @@ namespace DXApplication1
             this.sP_TTLTCGridControl.MainView = this.gridView1;
             this.sP_TTLTCGridControl.MenuManager = this.barManager1;
             this.sP_TTLTCGridControl.Name = "sP_TTLTCGridControl";
-            this.sP_TTLTCGridControl.Size = new System.Drawing.Size(1154, 328);
+            this.sP_TTLTCGridControl.Size = new System.Drawing.Size(903, 328);
             this.sP_TTLTCGridControl.TabIndex = 2;
             this.sP_TTLTCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -685,7 +685,7 @@ namespace DXApplication1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1736, 1055);
+            this.ClientSize = new System.Drawing.Size(1506, 721);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl1);

@@ -215,6 +215,7 @@ namespace DXApplication1
             // 
             this.txbMatKhau.Location = new System.Drawing.Point(364, 268);
             this.txbMatKhau.Name = "txbMatKhau";
+            this.txbMatKhau.Properties.PasswordChar = '*';
             this.txbMatKhau.Size = new System.Drawing.Size(182, 22);
             this.txbMatKhau.TabIndex = 33;
             // 
@@ -222,6 +223,7 @@ namespace DXApplication1
             // 
             this.txbXacNhanMK.Location = new System.Drawing.Point(364, 339);
             this.txbXacNhanMK.Name = "txbXacNhanMK";
+            this.txbXacNhanMK.Properties.PasswordChar = '*';
             this.txbXacNhanMK.Size = new System.Drawing.Size(182, 22);
             this.txbXacNhanMK.TabIndex = 34;
             // 
