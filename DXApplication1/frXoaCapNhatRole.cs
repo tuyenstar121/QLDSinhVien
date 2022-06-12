@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DXApplication1
 {
-    public partial class FrXoaRole : Form
+    public partial class frXoaCapNhatRole : Form
     {
-        public FrXoaRole()
+        public frXoaCapNhatRole()
         {
             InitializeComponent();
             comboBoxload();
@@ -107,6 +107,48 @@ namespace DXApplication1
                         MessageBox.Show("Xóa role thất bại !!!", "Lỗi");
                 }
             }
+        }
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            string cmd1 = "";
+            string cmd2 = "";
+            string cmd3 = "";
+            string cmd4 = "";
+            string cmd5 = "";
+
+            if (checkOwner.Checked) cmd1 = " ALTER ROLE[db_owner] ADD MEMBER[" + cbRole.Text + "]";
+            else cmd1 = "ALTER ROLE [db_owner] DROP MEMBER [" + cbRole.Text + "]";
+
+            if (checkAccessAdmin.Checked) cmd2 = " ALTER ROLE[db_accessadmin] ADD MEMBER[" + cbRole.Text + "]";
+            else cmd2 = "ALTER ROLE [db_accessadmin] DROP MEMBER [" + cbRole.Text + "]";
+
+            if (checkWriter.Checked) cmd3 = " ALTER ROLE[db_datawriter] ADD MEMBER[" + cbRole.Text + "]";
+            else cmd3 = "ALTER ROLE [db_datawriter] DROP MEMBER [" + cbRole.Text + "]";
+
+            if (checkReader.Checked) cmd4 = " ALTER ROLE[db_datareader] ADD MEMBER[" + cbRole.Text + "]";
+            else cmd4 = "ALTER ROLE [db_datareader] DROP MEMBER [" + cbRole.Text + "]";
+
+            if (checkBackup.Checked) cmd5 = " ALTER ROLE[db_backupoperator] ADD MEMBER[" + cbRole.Text + "]";
+            else cmd5 = "ALTER ROLE [db_backupoperator] DROP MEMBER [" + cbRole.Text + "]";
+
+            string cmd = cmd1 + cmd2 + cmd3 + cmd4 + cmd5;
+
+            DialogResult result = MessageBox.Show("Bạn có muốn cập nhật role đang chọn không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
+            {
+                if (Program.ExecSqlNonQuery(cmd) == 0)
+                {
+                    MessageBox.Show("Cập nhật role thành công", "Thông báo");
+                    comboBoxload();
+                    this.Close();
+                    frXoaCapNhatRole f = new frXoaCapNhatRole();
+                    f.StartPosition = FormStartPosition.CenterScreen;
+                    f.Show();
+                }
+                else
+                    MessageBox.Show("Cập nhật role thất bại !!!", "Lỗi");
+            }
+
         }
     }
 }

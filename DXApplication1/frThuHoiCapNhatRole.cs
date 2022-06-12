@@ -10,13 +10,17 @@ using System.Windows.Forms;
 
 namespace DXApplication1
 {
-    public partial class frThuHoiRole : Form
+    public partial class frThuHoiCapNhatRole : Form
     {
-        public frThuHoiRole()
+        string role = "";
+        public frThuHoiCapNhatRole()
         {
             InitializeComponent();
             loadCombobox();
+            loadCbRole();
+
         }
+
         private void loadCombobox()
         {
             DataTable dt = new DataTable();
@@ -28,6 +32,19 @@ namespace DXApplication1
             cbMaUser.DataSource = bdsgv;
             cbMaUser.DisplayMember = "name";
             cbMaUser.ValueMember = "name";
+        }
+
+        private void loadCbRole()
+        {
+
+            DataTable dt1 = new DataTable();
+            string cmd2 = "Select name From sys.database_principals Where type = 'R' and principal_id < 16384 and principal_id != 0";
+            dt1 = Program.ExecSqlDataTable(cmd2);
+            BindingSource bdsgv2 = new BindingSource();
+            bdsgv2.DataSource = dt1;
+            cbRole.DataSource = bdsgv2;
+            cbRole.DisplayMember = "name";
+            cbRole.ValueMember = "name";
         }
 
         private void cbRole_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,11 +61,14 @@ namespace DXApplication1
             Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break
             if (Program.myReader.HasRows)
             {
-                txtRole.Text = Program.myReader.GetString(0);
+                cbRole.Text = Program.myReader.GetString(0);
+                role = Program.myReader.GetString(0);
+                btnXacNhan.Enabled = btnCapNhat.Enabled = true;
             }
             else
             {
                 MessageBox.Show("User này chưa thuộc role nào", "Thông báo");
+                btnXacNhan.Enabled = btnCapNhat.Enabled = false;
             }
 
             Program.myReader.Close();
@@ -56,10 +76,15 @@ namespace DXApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cmd = "EXECUTE sp_droprolemember '" + txtRole.Text + "' ,  '" + cbMaUser.Text + "'";
+            string cmd = "EXECUTE sp_droprolemember '" + cbRole.Text + "' ,  '" + cbMaUser.Text + "'";
             if (cbMaUser.Text.Equals(Program.mlogin))
             {
                 MessageBox.Show("Không thể xóa User ra khỏi Role vì đang đăng nhập vào User này", "Lỗi");
+            }
+            if (!cbRole.Text.Equals(role))
+            {
+                MessageBox.Show("Chọn sai role để xóa, vui lòng chọn đúng role của user cần xóa", "Lỗi");
+                return;
             }
             else
             {
@@ -67,14 +92,43 @@ namespace DXApplication1
                 if (result.Equals(DialogResult.OK))
                 {
                     if (Program.ExecSqlNonQuery(cmd) == 0)
-                    {
                         MessageBox.Show("Xóa user ra khỏi role thành công", "Thông báo");
-                        loadCombobox();
-                    }
                     else
                         MessageBox.Show("Xóa user ra khỏi role thất bại !!!", "Lỗi");
                 }
             }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            string cmd = "ALTER ROLE [" + cbRole.Text + "] ADD MEMBER  [" + cbMaUser.Text + "]"
+                + " ALTER ROLE [" + role + "] DROP MEMBER [" + cbMaUser.Text + "]";
+            if (!cbRole.Text.Equals(role))
+            {
+                DialogResult result = MessageBox.Show("Role vừa chọn khác với role hiện tại của user, bạn có chắn chắn muốn chuyển role cho user?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result.Equals(DialogResult.OK))
+                {
+                    if (Program.ExecSqlNonQuery(cmd) == 0)
+                    {
+                        MessageBox.Show("Cập nhật role user thành công", "Thông báo");
+                        this.Close();
+                        frThuHoiCapNhatRole f = new frThuHoiCapNhatRole();
+                        f.StartPosition = FormStartPosition.CenterScreen;
+                        f.Show();
+                    }
+                    else
+                        MessageBox.Show("Cập nhật role user thất bại !!!", "Lỗi");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có gì để cập nhật", "Thông báo");
+            }
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

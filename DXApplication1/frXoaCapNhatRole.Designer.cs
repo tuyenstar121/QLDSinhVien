@@ -1,7 +1,7 @@
 ﻿
 namespace DXApplication1
 {
-    partial class FrXoaRole
+    partial class frXoaCapNhatRole
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,7 @@ namespace DXApplication1
             this.checkBackup = new DevExpress.XtraEditors.CheckEdit();
             this.checkAccessAdmin = new DevExpress.XtraEditors.CheckEdit();
             this.checkOwner = new DevExpress.XtraEditors.CheckEdit();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.checkReader.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkWriter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBackup.Properties)).BeginInit();
@@ -53,11 +54,11 @@ namespace DXApplication1
             this.labelControl3.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(354, 27);
+            this.labelControl3.Location = new System.Drawing.Point(269, 25);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(109, 29);
+            this.labelControl3.Size = new System.Drawing.Size(257, 29);
             this.labelControl3.TabIndex = 17;
-            this.labelControl3.Text = "Xóa Role";
+            this.labelControl3.Text = "Xóa và Cập Nhật Role";
             // 
             // labelControl1
             // 
@@ -83,7 +84,7 @@ namespace DXApplication1
             // button1
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(401, 367);
+            this.button1.Location = new System.Drawing.Point(521, 367);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 51);
             this.button1.TabIndex = 30;
@@ -93,7 +94,7 @@ namespace DXApplication1
             // btnXacNhan
             // 
             this.btnXacNhan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnXacNhan.Location = new System.Drawing.Point(242, 367);
+            this.btnXacNhan.Location = new System.Drawing.Point(351, 367);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(91, 51);
             this.btnXacNhan.TabIndex = 29;
@@ -115,7 +116,6 @@ namespace DXApplication1
             // 
             // checkReader
             // 
-            this.checkReader.Enabled = false;
             this.checkReader.Location = new System.Drawing.Point(305, 260);
             this.checkReader.Name = "checkReader";
             this.checkReader.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -128,7 +128,6 @@ namespace DXApplication1
             // 
             // checkWriter
             // 
-            this.checkWriter.Enabled = false;
             this.checkWriter.Location = new System.Drawing.Point(305, 214);
             this.checkWriter.Name = "checkWriter";
             this.checkWriter.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -141,7 +140,6 @@ namespace DXApplication1
             // 
             // checkBackup
             // 
-            this.checkBackup.Enabled = false;
             this.checkBackup.Location = new System.Drawing.Point(305, 304);
             this.checkBackup.Name = "checkBackup";
             this.checkBackup.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -154,7 +152,6 @@ namespace DXApplication1
             // 
             // checkAccessAdmin
             // 
-            this.checkAccessAdmin.Enabled = false;
             this.checkAccessAdmin.Location = new System.Drawing.Point(305, 171);
             this.checkAccessAdmin.Name = "checkAccessAdmin";
             this.checkAccessAdmin.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -167,7 +164,6 @@ namespace DXApplication1
             // 
             // checkOwner
             // 
-            this.checkOwner.Enabled = false;
             this.checkOwner.Location = new System.Drawing.Point(305, 124);
             this.checkOwner.Name = "checkOwner";
             this.checkOwner.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -178,11 +174,23 @@ namespace DXApplication1
             this.checkOwner.Size = new System.Drawing.Size(158, 24);
             this.checkOwner.TabIndex = 31;
             // 
-            // FrXoaRole
+            // btnCapNhat
+            // 
+            this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCapNhat.Location = new System.Drawing.Point(208, 367);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(91, 51);
+            this.btnCapNhat.TabIndex = 37;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // frXoaCapNhatRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.checkReader);
             this.Controls.Add(this.checkWriter);
@@ -194,7 +202,7 @@ namespace DXApplication1
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl1);
-            this.Name = "FrXoaRole";
+            this.Name = "frXoaCapNhatRole";
             this.Text = "Xóa Role";
             this.Load += new System.EventHandler(this.cbRole_SelectionChangeCommitted);
             ((System.ComponentModel.ISupportInitialize)(this.checkReader.Properties)).EndInit();
@@ -219,5 +227,6 @@ namespace DXApplication1
         private DevExpress.XtraEditors.CheckEdit checkBackup;
         private DevExpress.XtraEditors.CheckEdit checkAccessAdmin;
         private DevExpress.XtraEditors.CheckEdit checkOwner;
+        private System.Windows.Forms.Button btnCapNhat;
     }
 }

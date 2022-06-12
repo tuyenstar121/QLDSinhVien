@@ -251,11 +251,11 @@ namespace DXApplication1
 
         private void btnXoaRole_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(FrXoaRole));
+            Form frm = this.CheckExists(typeof(frXoaCapNhatRole));
             if (frm != null) frm.Activate();
             else
             {
-                FrXoaRole f = new FrXoaRole();
+                frXoaCapNhatRole f = new frXoaCapNhatRole();
                 f.MdiParent = this;
 
                 f.Show();
@@ -277,11 +277,11 @@ namespace DXApplication1
 
         private void btnThuHoiRole_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(frThuHoiRole));
+            Form frm = this.CheckExists(typeof(frThuHoiCapNhatRole));
             if (frm != null) frm.Activate();
             else
             {
-                frThuHoiRole f = new frThuHoiRole();
+                frThuHoiCapNhatRole f = new frThuHoiCapNhatRole();
                 f.MdiParent = this;
 
                 f.Show();

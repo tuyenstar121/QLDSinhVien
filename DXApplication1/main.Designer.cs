@@ -218,7 +218,7 @@ namespace DXApplication1
             // 
             // btnXoaRole
             // 
-            this.btnXoaRole.Caption = "Xóa Role";
+            this.btnXoaRole.Caption = "Xóa và Cập Nhật Role";
             this.btnXoaRole.Enabled = false;
             this.btnXoaRole.Id = 20;
             this.btnXoaRole.ImageOptions.Image = global::DXApplication1.Properties.Resources.resetmodeldifferences_16x16;
@@ -249,7 +249,7 @@ namespace DXApplication1
             // 
             // btnThuHoiRole
             // 
-            this.btnThuHoiRole.Caption = "Thu Hồi Role User";
+            this.btnThuHoiRole.Caption = "Thu Hồi và Cập Nhật Role User";
             this.btnThuHoiRole.Enabled = false;
             this.btnThuHoiRole.Id = 21;
             this.btnThuHoiRole.ImageOptions.Image = global::DXApplication1.Properties.Resources.borules_16x16;

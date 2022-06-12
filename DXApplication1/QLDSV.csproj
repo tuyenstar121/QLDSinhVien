@@ -164,11 +164,11 @@
     <Compile Include="frXemDiem.Designer.cs">
       <DependentUpon>frXemDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrXoaRole.cs">
+    <Compile Include="frXoaCapNhatRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrXoaRole.Designer.cs">
-      <DependentUpon>FrXoaRole.cs</DependentUpon>
+    <Compile Include="frXoaCapNhatRole.Designer.cs">
+      <DependentUpon>frXoaCapNhatRole.cs</DependentUpon>
     </Compile>
     <Compile Include="FrXoaTK.cs">
       <SubType>Form</SubType>
@@ -176,11 +176,11 @@
     <Compile Include="FrXoaTK.Designer.cs">
       <DependentUpon>FrXoaTK.cs</DependentUpon>
     </Compile>
-    <Compile Include="frThuHoiRole.cs">
+    <Compile Include="frThuHoiCapNhatRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frThuHoiRole.Designer.cs">
-      <DependentUpon>frThuHoiRole.cs</DependentUpon>
+    <Compile Include="frThuHoiCapNhatRole.Designer.cs">
+      <DependentUpon>frThuHoiCapNhatRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\App_Start\FluentStateInfoConfig.cs" />
     <Compile Include="Program.cs" />
@@ -240,14 +240,14 @@
     <EmbeddedResource Include="frXemDiem.resx">
       <DependentUpon>frXemDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrXoaRole.resx">
-      <DependentUpon>FrXoaRole.cs</DependentUpon>
+    <EmbeddedResource Include="frXoaCapNhatRole.resx">
+      <DependentUpon>frXoaCapNhatRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrXoaTK.resx">
       <DependentUpon>FrXoaTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frThuHoiRole.resx">
-      <DependentUpon>frThuHoiRole.cs</DependentUpon>
+    <EmbeddedResource Include="frThuHoiCapNhatRole.resx">
+      <DependentUpon>frThuHoiCapNhatRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
